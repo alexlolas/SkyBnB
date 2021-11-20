@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
 
   def create
     @user = User.find_by_credentials(
@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if @user
       login(@user)
-      render :show
+      render "api/users/show"
     else
       render @user.errors.full_messages, status: 422
     end
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     @user = current_user
     if @user 
       logout
-      render :show
+      render "api/users/show"
     else
       render json: ["Nobody signed in"], status: 404
     end
