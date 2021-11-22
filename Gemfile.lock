@@ -117,6 +117,7 @@ GEM
     nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
     pg (1.2.3)
+    plissken (1.4.1)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -219,6 +220,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
+  plissken
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.6)
