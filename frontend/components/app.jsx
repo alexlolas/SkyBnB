@@ -6,8 +6,8 @@ import LoginContainer from './session/login_container'
 const App = () => (
   <div>
     <h1>Sky BnB</h1>
-    <SignupContainer />
-    <LoginContainer />
+    <Route path='/login' component={LoginContainer} />
+    <Route path='/signup' component={SignupContainer}/>
   </div>
 )
 
