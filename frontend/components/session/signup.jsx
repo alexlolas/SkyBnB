@@ -21,19 +21,27 @@ class Signup extends React.Component{
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
-  renderErrors(){
-    <ul>
-      {this.props.errors.map((error, i) => (
-        <li key={i}>{error}</li>
-      ))}
-    </ul>
+  // componentWillUnmount() {
+  //   this.props.clearErrors()
+  // }
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={i}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    )
   }
 
   render(){
     return (
       <form onSubmit={this.handleSubmit}>
-        {this.renderErrors()}
         <h2>Sign Up</h2>
+        {this.renderErrors()}
         <input type="text" 
                placeholder='Email'
                value={this.state.email} 
