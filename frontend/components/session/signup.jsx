@@ -5,8 +5,8 @@ class Signup extends React.Component{
     super(props)
     this.state = {
       email: '',
-      first_name: '',
-      last_name: '',
+      firstName: '',
+      lastName: '',
       password: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -24,6 +24,7 @@ class Signup extends React.Component{
   render(){
     return (
       <form onSubmit={this.handleSubmit}>
+        <h2>Sign Up</h2>
         <label >Email
         <input type="text" 
                value={this.state.email} 
@@ -33,15 +34,15 @@ class Signup extends React.Component{
         <br />
         <label >First Name
         <input type="text" 
-               value={this.state.first_name} 
-               onChange={this.update('first_name')}
+               value={this.state.firstName} 
+               onChange={this.update('firstName')}
         />
         </label>
         <br />
         <label >Last Name
         <input type="text" 
-               value={this.state.last_name} 
-               onChange={this.update('last_name')}
+               value={this.state.lastName} 
+               onChange={this.update('lastName')}
         />
         </label>
         <br />
