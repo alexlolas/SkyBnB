@@ -25,33 +25,29 @@ class Signup extends React.Component{
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Sign Up</h2>
-        <label >Email
         <input type="text" 
+               placeholder='Email'
                value={this.state.email} 
                onChange={this.update('email')}
         />
-        </label>
         <br />
-        <label >First Name
         <input type="text" 
+               placeholder='First Name'
                value={this.state.firstName} 
                onChange={this.update('firstName')}
         />
-        </label>
         <br />
-        <label >Last Name
         <input type="text" 
+               placeholder='Last Name'
                value={this.state.lastName} 
                onChange={this.update('lastName')}
         />
-        </label>
         <br />
-        <label >Password
         <input type="password" 
+               placeholder='Password'
                value={this.state.password} 
                onChange={this.update('password')}
         />
-        </label>
         <br />
         <button>Create User</button>
       </form>
