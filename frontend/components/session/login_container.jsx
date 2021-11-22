@@ -1,13 +1,14 @@
 import { connect } from "react-redux";
-import { login } from "../../actions/session_actions";
+import { login, clearErrors } from "../../actions/session_actions";
 import LoginForm from "./login_form";
 
-const mSTP = state => ({
-  // Errors?
+const mSTP = ({errors}) => ({
+  errors: errors.session
 })
 
 const mDTp = dispatch => ({
-  loginUser: user => dispatch(login(user))
+  loginUser: user => dispatch(login(user)),
+  clearErrors: () => dispatch(clearErrors())
 })
 
-export default connect(null, mDTp)(LoginForm)
+export default connect(mSTP, mDTp)(LoginForm)

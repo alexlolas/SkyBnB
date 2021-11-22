@@ -19,9 +19,26 @@ class LoginForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value })
   }
 
+  componentWillUnmount(){
+    this.props.clearErrors()
+  }
+
+  renderErrors(){
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={i}> 
+            {error}          
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
   render(){
     return (
       <form onSubmit={this.handleSubmit}>
+       {this.renderErrors()}
         <h2>Log In</h2>
           <input type="text" 
                  placeholder='Email'
