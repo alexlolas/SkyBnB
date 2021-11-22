@@ -21,9 +21,18 @@ class Signup extends React.Component{
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
+  renderErrors(){
+    <ul>
+      {this.props.errors.map((error, i) => (
+        <li key={i}>{error}</li>
+      ))}
+    </ul>
+  }
+
   render(){
     return (
       <form onSubmit={this.handleSubmit}>
+        {this.renderErrors()}
         <h2>Sign Up</h2>
         <input type="text" 
                placeholder='Email'
