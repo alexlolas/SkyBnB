@@ -8,7 +8,6 @@ const App = () => (
   <div>
     {/* <SignupContainer />
     <LoginContainer /> */}
-    <h1>Sky BnB</h1>
     <NavbarContainer />
     <Route path='/signup' component={props => <SignupContainer {...props}/>}/>
     <Route path='/login' component={LoginContainer} />
