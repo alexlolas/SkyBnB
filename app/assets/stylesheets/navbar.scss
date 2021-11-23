@@ -20,9 +20,10 @@
   justify-content: space-between;
   padding: 10px;
   height: 25px;
+  flex: 1;
   border: 1px solid lightgray;
   border-radius: 999px;
-  max-width: 300px
+  max-width: 250px
 }
 
 .search-bar > input {
@@ -31,13 +32,6 @@
   outline-width: 0;
 }
 
-.header_right {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 15vw;
-  margin-right: 80px;
-}
 
 .globe-icon {
   display: inline-flex;
@@ -70,4 +64,11 @@
   align-items: center;
 }
 
+.header_right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15vw;
+  margin-right: 80px;
+}
 
