@@ -15,18 +15,20 @@
 }
 
 .search-bar {
+ 
   display: flex;
-  flex: 1;
-  align-items: center;
-  max-width: fit-content;
+  justify-content: space-between;
   padding: 10px;
-  height: 30px;
+  height: 25px;
   border: 1px solid lightgray;
   border-radius: 999px;
+  max-width: 300px
 }
 
 .search-bar > input {
-  width: 250px
+  border: none;
+  padding: 10px;
+  outline-width: 0;
 }
 
 .header_right {
@@ -36,3 +38,36 @@
   width: 15vw;
   margin-right: 80px;
 }
+
+.globe-icon {
+  display: inline-flex;
+  height: 16px;
+  width: 16px;
+  justify-content: space-between;
+  fill: currentColor;
+}
+
+.search-icon {
+  fill: none;
+  height: 12px;
+  width: 12px;
+  stroke: currentColor;
+  stroke-width: 5.333;
+  overflow: visible;
+  color: white;
+  position: relative;
+}
+
+.search-button {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  border-radius: 50%;
+  background: red;
+  width: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
