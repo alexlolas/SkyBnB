@@ -31,6 +31,7 @@
   border: none;
   padding: 10px;
   outline-width: 0;
+  width: 200px;
 }
 
 
@@ -74,12 +75,16 @@
 // }
 
 .dropdown {
-  display: block;
+  // display: flex;
   position: relative;
+  // align-items: center;
   // flex-direction: column;
 
 }
-
+.header-right {
+  display: flex;
+  align-items: center;
+}
 .fa-user-circle{
      display: none;
      display: flex;
@@ -89,10 +94,12 @@
      // z-index: 1;
      // margin-right: 150px;
      display: flex;
-     margin-top: 15px;
+    //  margin-top: 12px;
      flex-direction: column;
-     margin-right: 75px;
+    //  margin-right: 10px;
      position: relative;
+     cursor: pointer;
+     font-size: 25px;
 
     }
 .dropdown-menu {
@@ -121,3 +128,4 @@
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+

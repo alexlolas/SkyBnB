@@ -9,7 +9,7 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-  logout: () => dispatch(logout),
+  logout: () => dispatch(logout()),
   openModal: (e) => dispatch(openModal(e))
 
 })
