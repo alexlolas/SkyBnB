@@ -68,3 +68,5 @@ yarn-debug.log*
 
 /package-lock.json
 **/bundle*
+
+bundle.js*
