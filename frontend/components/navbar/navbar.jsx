@@ -25,13 +25,20 @@ class Navbar extends React.Component{
              </button>
           </div>
 
-          <div className='header-right'>
-            <div className='globe-icon'><GlobeIcon /></div>
-            <Link to='/signup'>SignUp</Link> 
-            <Link to='/login'>Login</Link> 
-            <i className="far fa-user-circle"></i>
+            {/* <i className="far fa-user-circle"></i> */}
+            <div className="dropdown">
+            <button className="far fa-user-circle"></button>
+              <div className="dropdown-menu">
+              <ul className="dropdown-content" onClick={() => this.props.openModal('login')}>Log In</ul>
+              <ul className="dropdown-content" onClick={() => this.props.openModal('signup')}>Sign Up</ul>
+              </div>
+
+            </div>
+          
+
+
             
-          </div>
+        
         </div>
       )
     } else {
