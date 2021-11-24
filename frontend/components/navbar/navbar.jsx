@@ -13,6 +13,8 @@ class Navbar extends React.Component{
     
     if (!this.props.currentUser) {
       return (
+        <div>
+
         <div className="header">
           
           <Link to='/'>
@@ -20,9 +22,6 @@ class Navbar extends React.Component{
               src="https://i.pinimg.com/originals/3c/bf/be/3cbfbe148597341fa56f2f87ade90956.png"
             />
           </Link>
-         
-          
-
           <div className="search-bar">
             <input className="search-bar-input" type="text" placeholder='Start your search' />
               <button  className="search-button">
@@ -44,16 +43,15 @@ class Navbar extends React.Component{
               </div>
 
             </div>
-            </div>
-          
-
-
-            
-        
+            </div>     
+        </div>
+          <img src="https://picturelistings.s3.us-west-1.amazonaws.com/nature-gcdd909c34_1920.jpg" />
         </div>
       )
     } else {
       return (
+        <div>
+          
         <div className="header">
           <img className="header-icon" 
           src="https://i.pinimg.com/originals/3c/bf/be/3cbfbe148597341fa56f2f87ade90956.png" 
@@ -84,7 +82,10 @@ class Navbar extends React.Component{
 
 
             
-        
+          
+        </div>
+          <img src="https://picturelistings.s3.us-west-1.amazonaws.com/nature-gcdd909c34_1920.jpg" />
+
         </div>
       )
     }

@@ -10,7 +10,7 @@
 }
 .header-icon {
   object-fit: contain;
-  height: 100px;
+  height: 75px;
   margin-left: 85px
 }
 
@@ -96,7 +96,7 @@
      display: flex;
     //  margin-top: 12px;
      flex-direction: column;
-     margin-right: 10px;
+     margin-right: 5px;
      position: relative;
      cursor: pointer;
      font-size: 25px;
@@ -113,6 +113,7 @@
      height: 75px;
      display: none;
      position: absolute;
+    
 }  
 .dropdown-content {
     font-size: 16px;
