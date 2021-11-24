@@ -15,6 +15,7 @@ class Signup extends React.Component{
   handleSubmit(e){
     e.preventDefault()
     this.props.signupUser(this.state)
+      .then(this.props.closeModal)
   }
 
   update(field){
@@ -56,6 +57,7 @@ class Signup extends React.Component{
                value={this.state.firstName} 
                onChange={this.update('firstName')}
         />
+          <div className='modal-errors'>{this.renderErrors()[0]}</div>
         <br />
           <input className="modal-inputs"
               type="text"
@@ -73,7 +75,7 @@ class Signup extends React.Component{
         <br />
         <button className="modal-submit">Create User</button>
         </div>
-        <div className='modal-footer' onClick=''>Sign up or
+        <div className='modal-footer'>Sign up or
           <button className='button'>{this.props.otherForm}</button>
         </div>
       </form>

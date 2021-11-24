@@ -13,6 +13,19 @@ class LoginForm extends React.Component {
   handleSubmit(e){
     e.preventDefault()
     this.props.loginUser(this.state)
+      .then(this.props.closeModal);    
+  }
+
+  handleSubmitDemo(e){
+    e.preventDefault()
+
+    const demoUser = { 
+        email: 'DemoUser',
+        password: 'DemoUser'
+     }
+
+    this.props.loginUser(demoUser)
+      .then(this.props.closeModal())
   }
 
   update(field){
@@ -36,7 +49,9 @@ class LoginForm extends React.Component {
   }
 
   render(){
+    
     return (
+      <div>
       <form onSubmit={this.handleSubmit} className="session-form">
         <h2 className='modal-title' >Log In</h2>
         <div className="modal-content">
@@ -56,11 +71,17 @@ class LoginForm extends React.Component {
           />
         <br />
         <button className="modal-submit">Log In</button>
+        <br />
+              <button className='demo-user' onClick={(e) => this.handleSubmitDemo(e)}>Demo User</button>
+            
         </div>
-          <div className='modal-footer' onClick=''>Log in or
+          <div className='modal-footer'>Log in or
           <button className='button'>{this.props.otherForm}</button>
           </div>
+         
+          
       </form>
+      </div>
     )
   }
 }

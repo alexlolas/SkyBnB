@@ -9,7 +9,7 @@
 }
 
 .modal-child {
-  height: 350px;
+  height: 360px;
   width: 275px;
   background-color: white;
   color: black;
@@ -68,6 +68,10 @@
   height: 40px;
 }
 
+.modal-submit:hover {
+  background-color: rgb(230, 22, 22);
+}
+
 .modal-footer {
   display: flex;
   justify-content: center;
@@ -89,4 +93,21 @@
 
 .button:hover {
   background-color: lightgray;
+}
+
+.demo-user {
+  display: flex;
+  justify-content: center;
+  border: 1px solid red;
+  border-radius: 999px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  align-items: center;
+  height: 40px
+}
+
+.demo-user:hover {
+  background-color: rgb(230, 22, 22);
 }
