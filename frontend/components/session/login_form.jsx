@@ -36,18 +36,6 @@ class LoginForm extends React.Component {
     this.props.clearErrors()
   }
 
-  renderErrors(){
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={i}> 
-            {error}          
-          </li>
-        ))}
-      </ul>
-    )
-  }
-
   render(){
     
     return (
@@ -55,7 +43,6 @@ class LoginForm extends React.Component {
       <form onSubmit={this.handleSubmit} className="session-form">
         <h2 className='modal-title' >Log In</h2>
         <div className="modal-content">
-          <div className='modal-errors' >{this.renderErrors()}</div>
           <input className='modal-inputs'
                 type="text" 
                  placeholder='Email'
@@ -69,6 +56,9 @@ class LoginForm extends React.Component {
                  value={this.state.password} 
                  onChange={this.update('password')}
           />
+            <div className='modal-errors'>
+              {this.props.errors ? this.props.errors.invalid : ''}
+            </div>
         <br />
         <button className="modal-submit">Log In</button>
         <br />
