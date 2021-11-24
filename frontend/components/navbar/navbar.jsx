@@ -6,10 +6,12 @@ import { GlobeIcon, SearchIcon }from '../svg/svg'
 class Navbar extends React.Component{
   constructor(props){
     super(props)
+    console.log(this.props)
   }
 
   render(){
-    if (!this.props.currentUser ) {
+    
+    if (!this.props.currentUser) {
       return (
         <div className="header">
       

@@ -7,6 +7,15 @@
     <script src="https://kit.fontawesome.com/4601c228d0.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <% if current_user %>
+      <script>
+        window.currentUser = {
+          "email": "<%= current_user.email%>",
+          "firstName": "<%= current_user.first_name%>",
+          "id": <%= current_user.id%>
+        };
+      </script>
+    <% end %>
   </head>
 
   <body>
