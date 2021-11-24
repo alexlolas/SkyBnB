@@ -11,8 +11,8 @@ const App = () => (
   <div>
     <NavbarContainer />
     <Modal />
-    <Route path='/signup' component={props => <SignupContainer {...props}/>}/>
-    <Route path='/login' component={LoginContainer} />
+    {/* <Route path='/signup' component={props => <SignupContainer {...props}/>}/>
+    <Route path='/login' component={LoginContainer} /> */}
   </div>
 )
 
