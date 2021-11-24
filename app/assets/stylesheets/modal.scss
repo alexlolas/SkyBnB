@@ -9,14 +9,14 @@
 }
 
 .modal-child {
-  height: 300px;
-  width: 200px;
+  height: 350px;
+  width: 275px;
   background-color: white;
   color: black;
   font-weight: 500;
   padding: 50px;
   position: fixed;
-  top: 325px;
+  top: 375px;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
@@ -43,6 +43,7 @@
   border: 1px solid lightgray;
   border-radius: 999px;
   padding: 5px;
+  height: 20px;
 }
 
 .modal-title {
@@ -54,6 +55,7 @@
 
 .modal-errors {
   font-size: 16px;
+  color: red;
 }
 
 .modal-submit {
@@ -63,4 +65,28 @@
   border-radius: 999px;
   padding: 5px;
   cursor: pointer;
+  height: 40px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  font-size: 16;
+  margin-top: 9px;
+  align-items: center;
+  
+}
+
+.button {
+  border: 1px solid white;
+  border-radius: 999px;
+  // padding: 2px;
+  background-color: transparent;
+  margin-top: 1px;
+  cursor: pointer;
+  background: rgba(50, 50, 50, 0.1);
+}
+
+.button:hover {
+  background-color: lightgray;
 }

@@ -57,6 +57,9 @@ class LoginForm extends React.Component {
         <br />
         <button className="modal-submit">Log In</button>
         </div>
+          <div className='modal-footer' onClick=''>Log in or
+          <button className='button'>{this.props.otherForm}</button>
+          </div>
       </form>
     )
   }

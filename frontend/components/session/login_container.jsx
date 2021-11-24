@@ -14,7 +14,7 @@ const mDTp = dispatch => ({
   closeModal: () => dispatch(closeModal()),
   otherForm: (
     <div className="session-button" onClick={() => dispatch(openModal('signup'))}>
-      Signup
+       Signup
     </div>
   )
 })
