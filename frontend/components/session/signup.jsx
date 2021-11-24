@@ -39,34 +39,40 @@ class Signup extends React.Component{
 
   render(){
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h2>Sign Up</h2>
-        {this.renderErrors()}
-        <input type="text" 
+      <form onSubmit={this.handleSubmit} className="session-form">
+        <h2 className='modal-title'>Sign Up</h2>
+        <div className="modal-content">
+          <div className='modal-errors'>{this.renderErrors()}</div>
+          <input className="modal-inputs"
+              type="text" 
                placeholder='Email'
                value={this.state.email} 
                onChange={this.update('email')}
         />
         <br />
-        <input type="text" 
+          <input className="modal-inputs"
+              type="text"
                placeholder='First Name'
                value={this.state.firstName} 
                onChange={this.update('firstName')}
         />
         <br />
-        <input type="text" 
+          <input className="modal-inputs"
+              type="text"
                placeholder='Last Name'
                value={this.state.lastName} 
                onChange={this.update('lastName')}
         />
         <br />
-        <input type="password" 
+          <input className="modal-inputs"
+              type="password"
                placeholder='Password'
                value={this.state.password} 
                onChange={this.update('password')}
         />
         <br />
-        <button>Create User</button>
+        <button className="modal-submit">Create User</button>
+        </div>
       </form>
     )
   }

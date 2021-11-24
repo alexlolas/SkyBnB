@@ -1,0 +1,66 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(50, 50, 50, 0.3);
+  z-index: 10;
+}
+
+.modal-child {
+  height: 300px;
+  width: 200px;
+  background-color: white;
+  color: black;
+  font-weight: 500;
+  padding: 50px;
+  position: fixed;
+  top: 325px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.session-form {
+  height: inherit;
+  margin-top: -10px;
+  overflow: scroll;
+
+
+}
+
+.modal-content{
+        display:flex;
+        flex-direction: column;
+        width: inherit;
+        margin-top: 20px;
+        font-size: 12px;
+        
+    }
+
+.modal-content .modal-inputs {
+  border: 1px solid lightgray;
+  border-radius: 999px;
+  padding: 5px;
+}
+
+.modal-title {
+  font-size: 26px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-errors {
+  font-size: 16px;
+}
+
+.modal-submit {
+  background-color: red;
+  color: white;
+  border: 1px solid red;
+  border-radius: 999px;
+  padding: 5px;
+  cursor: pointer;
+}
