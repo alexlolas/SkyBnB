@@ -45,7 +45,7 @@ class Navbar extends React.Component{
             </div>
             </div>     
         </div>
-          <img src="https://picturelistings.s3.us-west-1.amazonaws.com/nature-gcdd909c34_1920.jpg" />
+          <img className="background-image" src="https://picturelistings.s3.us-west-1.amazonaws.com/nature-gcdd909c34_1920.jpg" />
         </div>
       )
     } else {
@@ -84,7 +84,7 @@ class Navbar extends React.Component{
             
           
         </div>
-          <img src="https://picturelistings.s3.us-west-1.amazonaws.com/nature-gcdd909c34_1920.jpg" />
+          <img className="background-image" src="https://picturelistings.s3.us-west-1.amazonaws.com/nature-gcdd909c34_1920.jpg" />
 
         </div>
       )
