@@ -20,7 +20,7 @@ class Api::ListingsController < ApplicationController
   end
 
   def update
-    @listing = Listing.find_by(id: params[:id])
+    @listing = Listing.find(params[:id])
     if @listing && @listing.update(listing_params)
       render :show
     else
@@ -40,10 +40,9 @@ class Api::ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :description, 
-                                    :state, :city, :zip_code, :address, 
-                                    :price, :user_id, :rooms, :num_beds,
-                                    :bathrooms, :capacity)
+    params.require(:listing).permit(:title, :description, :state, 
+                                    :city, :zip_code, :address, :price, 
+                                    :user_id, :rooms, :num_beds, :bathrooms, :capacity)
   end
 
 

@@ -29,7 +29,7 @@ export default fetchListings = () => (
 
 export default updateListing = listing => (
     $.ajax ({
-      method: 'UPDATE',
+      method: 'PATCH',
       url: `/api/listings/${listing.id}`,
       data: {listing}
     })
