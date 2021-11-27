@@ -1,5 +1,5 @@
 import { RECEIVE_LISTING, 
-         RECEIVE_ALL_LISTINGS, 
+         RECEIVE_ALL_LISTINGS,
          REMOVE_LISTING } from "../actions/listing_actions";
 
 const listingReducer = (state = {}, action) => {
