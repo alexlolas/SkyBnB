@@ -87,7 +87,7 @@ class Signup extends React.Component{
         <button className="modal-submit">Create User</button>
         </div>
         <div className='modal-footer'>Sign up or
-          <button className='button'>{this.props.otherForm}</button>
+          <button type='button' className='button'>{this.props.otherForm}</button>
         </div>
       </form>
     )
