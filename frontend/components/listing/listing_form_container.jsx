@@ -12,13 +12,13 @@ const mSTP = state => ({
     zipCode: '',
     address: '',
     price: '',
-    userId: '',
+    userId: state.session.id,
     rooms: '',
     numBeds: '',
     bathrooms: '',
     capacity: ''
   },
-  formType: 'CreateListing'
+  formType: 'Create Listing'
 })
 
 const mDTP = dispatch => ({
