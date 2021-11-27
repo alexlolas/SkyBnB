@@ -16,7 +16,7 @@ export const receiveAllListings = listings => ({
   listings
 })
 
-export const removeListing = listingId => ({
+export const deleteListing = listingId => ({
   type: REMOVE_LISTING,
   listingId
 })
@@ -34,7 +34,7 @@ export const fetchListings = () => dispatch => ListingUtil.fetchListings()
   .then(listings => dispatch(receiveAllListings(listings)))
 
 export const removeListing = listingId => dispatch => ListingUtil.removeListing(listingId)
-  .then(listing => dispatch(removeListing(listingId)))
+  .then(listing => dispatch(deleteListing(listingId)))
 
 export const createListing = listing => dispatch => ListingUtil.createListing(listing)
   .then(listing => dispatch(receiveListing(listing)))

@@ -1,3 +1,4 @@
+
 export const createListing = listing => (
   $.ajax({
     method: 'POST',
@@ -6,28 +7,28 @@ export const createListing = listing => (
   })
 )
 
-export default fetchListing = listing => (
+export const fetchListing = listing => (
   $.ajax ({
     method: 'GET',
     url: `/api/listings/${listing}`
   })
 )
 
-export default deleteListing = listingId => (
+export const removeListing = listingId => (
   $.ajax ({
     method: 'DELETE',
     url: `/api/listings/${listingId}`
   })
 )
 
-export default fetchListings = () => (
+export const fetchListings = () => (
   $.ajax ({
     method: 'GET',
     url: '/api/listings'
   })
 )
 
-export default updateListing = listing => (
+export const updateListing = listing => (
     $.ajax ({
       method: 'PATCH',
       url: `/api/listings/${listing.id}`,
