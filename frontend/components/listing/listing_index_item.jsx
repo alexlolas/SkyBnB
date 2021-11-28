@@ -10,6 +10,7 @@ class ListingIndexItem extends React.Component {
     return (
       <li>
         {this.props.listing.title}
+        <button onClick={() => this.props.deleteListing(this.props.listing.id)}></button>
       </li>
     )
   }

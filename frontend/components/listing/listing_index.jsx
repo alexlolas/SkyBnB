@@ -15,7 +15,7 @@ class ListingIndex extends React.Component {
     return (
       <ul>
           {this.props.listings.map((listing, idx) => (
-             <ListingIndexItem  key={idx} listing={listing} fetchListings={this.props.fetchListings}/>
+             <ListingIndexItem  key={idx} listing={listing} deleteListing={this.props.deleteListing}/>
           ))}
       </ul>
     )
