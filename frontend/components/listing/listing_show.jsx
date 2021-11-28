@@ -10,7 +10,7 @@ class ListingShow extends React.Component {
   }
   render(){
     if (!this.props.listing) return null
-    if (!this.props.users) return null
+    // if (!this.props.users) return null
     return (
       <div>
         <label> Description:&nbsp;

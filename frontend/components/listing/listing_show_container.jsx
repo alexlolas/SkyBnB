@@ -6,7 +6,7 @@ import ListingShow from "./listing_show";
 const mSTP = (state, ownProps) => ({
   currentUser: state.session.id,
   listing: state.entities.listings[ownProps.match.params.listingId],
-  users: state.entites.users
+  // users: state.entites.users
 })
 
 const mDTP = dispatch => ({
