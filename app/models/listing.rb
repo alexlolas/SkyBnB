@@ -8,6 +8,11 @@ validates :bathrooms, :capacity, presence: true
     primary_key: :id,
     class_name: :User
   
+   has_many :reviews,
+    foreign_key: :listing_id,
+    primary_key: :id,
+    class_name: :Review
+  
   has_one_attached :photo
 
 
