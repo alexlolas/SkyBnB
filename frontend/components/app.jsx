@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch} from "react-router-dom";
 
 
 
@@ -10,16 +10,19 @@ import ListingIndexContainer from './listing/listing_index_container'
 import ListingFormContainer from './listing/listing_form_container'
 import EditListingContainer from "./listing/edit_listing_container";
 import NavbarContainer from './navbar/navbar_container'
+import SplashContainer from "./listing/splash/splash_container";
 import Modal from "./modal/modal";
 const App = () => (
   <div>
     <NavbarContainer />
     <Modal />
-    {/* <ListingIndexContainer /> */}
+      <Switch> 
+        <Route exact path='/' component={SplashContainer} />
+        <Route exact path='/listings' component={ListingIndexContainer}/>
+        <Route exact path='/listings/create' component={ListingFormContainer} />
+        <Route exact path='/listings/:listingId/edit' component={EditListingContainer}/>
 
-    <Route path='/listings' component={ListingIndexContainer}/>
-    <Route path='/listings/create' component={ListingFormContainer} />
-    <Route path='/listings/:listingId/edit' component={EditListingContainer}/>
+      </Switch>
     {/* <Route path='/signup' component={props => <SignupContainer {...props}/>}/>
     <Route path='/login' component={LoginContainer} /> */}
   </div>
