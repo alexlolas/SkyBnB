@@ -12,5 +12,4 @@ json.extract! listing,
             :address,
             :num_beds,
             :capacity
-
-      #  json.photoUrl url_for(listing.photo)
+      json.photoUrl url_for(listing.photo)

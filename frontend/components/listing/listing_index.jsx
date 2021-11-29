@@ -14,10 +14,14 @@ class ListingIndex extends React.Component {
   render (){
     return (
       <div >
-        {this.props.listings.length}&nbsp;Listings Found
+        {this.props.listings.length !== 1 ? (
+          <div>{this.props.listings.length}&nbsp;Listings Found</div>
+
+        ) : <div>{this.props.listings.length}&nbsp;Listing Found</div>
+}
         <ul className="listing-container">
             {this.props.listings.map((listing, idx) => (
-               <ListingIndexItem  key={idx} session={this.props.session} listing={listing} deleteListing={this.props.deleteListing}/>
+               <ListingIndexItem  key={idx} session={this.props.session} listing={listing} removeListing={this.props.removeListing}/>
             ))}
         </ul>
       </div>

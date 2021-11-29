@@ -11,16 +11,22 @@ class ListingIndexItem extends React.Component {
     const { listing } = this.props
     return (
       <div className='listing-box'>
+        <img className='listing-img' src={listing.photoUrl}/>
       <Link className='index-item-box' to={`/listings/${listing.id}`}>
+          <div className='listing-location'>Entire residential home in {listing.city}</div>
           <div className="listing-title">{listing.title}</div>
-        <br />
-        Holds &nbsp;{listing.capacity}
-        <br />
-        {listing.rooms}&nbsp;Rooms&nbsp;&nbsp;
-        {listing.bathrooms}&nbsp;Bathrooms
+          <div className='random-dash'></div>
+          <div className='listing-info'>
+            {listing.capacity}&nbsp;guests · House ·&nbsp;
+            {listing.rooms}&nbsp; bed ·&nbsp;
+        {listing.bathrooms}&nbsp; bath
+            </div>
+        <div className='anemeties'>Wifi · Air conditioning · Free parking</div>
+          <div className='listing-cost'>${listing.price}&nbsp;
+            <div className='price-text'>/&nbsp;night</div></div>
         {listing.userId === this.props.session ? (
 
-          <button onClick={() => this.props.deleteListing(listing.id)}>Delete Listing</button>
+          <button onClick={() => this.props.removeListing(listing.id)}>Delete Listing</button>
         ) : null}
         </Link>
       </div>
