@@ -6,14 +6,20 @@ import { GlobeIcon, SearchIcon }from '../svg/svg'
 class Navbar extends React.Component{
   constructor(props){
     super(props)
-    this.state = { show: true }
+    this.state = { show: false }
     this.handleClick = this.handleClick.bind(this)
+    this.dropdownRef = React.createRef()
     console.log(this.state)
   }
 
   componentDidMount(){
+
     this.documentListener = (e) => {
-      this.setState({show: false})
+    
+      if (!this.dropdownRef.contains(e.target)) {
+        this.setState({show: false})
+        console.log('mount')
+      }
     }
     
     document.addEventListener('click', this.documentListener, true)
@@ -24,6 +30,8 @@ class Navbar extends React.Component{
   }
 
   handleClick(){
+    console.log('click')
+  
     this.setState({ show: !this.state.show })
   }
 
@@ -51,16 +59,16 @@ class Navbar extends React.Component{
         
             <div className="header-right" >
               Become a host
-            <div className="dropdown">
-                <div className="far fa-user-circle" onClick={this.handleClick} ></div>
+              <div className="dropdown" ref={div => (this.dropdownRef = div)}>
+                  <div className="far fa-user-circle"  onClick={this.handleClick} ></div>
               
-            {/* {this.state.show ? ( */}
+            {this.state.show ? (
 
-              <div className="dropdown-menu">
-              <ul className="dropdown-content" onClick={() => this.props.openModal('login')}>Log In</ul>
-              <ul className="dropdown-content" onClick={() => this.props.openModal('signup')}>Sign Up</ul>
-              </div>
-             {/* ) : null}  */}
+                <div className="dropdown-menu">
+                    <ul className="dropdown-content" onClick={() => this.props.openModal('login')}>Log In</ul>
+                    <ul className="dropdown-content" onClick={() => this.props.openModal('signup')}>Sign Up</ul>
+                </div>
+              ) : null}  
             
 
             </div>
@@ -89,13 +97,15 @@ class Navbar extends React.Component{
             {/* <i className="far fa-user-circle"></i> */}
             <div className="header-right">
               Become a host
-            <div className="dropdown">
+              <div className="dropdown" ref={div => (this.dropdownRef = div)}>
             {/* <div>Become a host</div> */}
-            <div className="far fa-user-circle"></div>
+                <div className="far fa-user-circle" onClick={this.handleClick}></div>
+                {this.state.show ? (
               <div className="dropdown-menu">
                 <ul className="dropdown-content">Welcome {this.props.currentUser.firstName}</ul>
                 <ul className="dropdown-content" onClick={() => this.props.logout()}>Logout</ul>
               </div>
+                ) : null}
 
             </div>
             </div>

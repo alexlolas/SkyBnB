@@ -13,4 +13,4 @@ json.extract! listing,
             :num_beds,
             :capacity
 
-  #  json.photos listing.photos.map {|photo| url_for(photo)}
+      #  json.photoUrl url_for(listing.photo)

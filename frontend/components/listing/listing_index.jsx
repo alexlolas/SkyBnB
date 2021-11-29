@@ -13,9 +13,9 @@ class ListingIndex extends React.Component {
 
   render (){
     return (
-      <div className="listing-container">
-
-        <ul>
+      <div >
+        {this.props.listings.length}&nbsp;Listings Found
+        <ul className="listing-container">
             {this.props.listings.map((listing, idx) => (
                <ListingIndexItem  key={idx} session={this.props.session} listing={listing} deleteListing={this.props.deleteListing}/>
             ))}

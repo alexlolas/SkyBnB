@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class ListingIndexItem extends React.Component {
   constructor(props){
@@ -7,19 +8,22 @@ class ListingIndexItem extends React.Component {
   }
 
   render() {
+    const { listing } = this.props
     return (
-      <li>
-        {this.props.listing.title}
+      <div className='listing-box'>
+      <Link className='index-item-box' to={`/listings/${listing.id}`}>
+          <div className="listing-title">{listing.title}</div>
         <br />
-        Holds &nbsp;{this.props.listing.capacity}
+        Holds &nbsp;{listing.capacity}
         <br />
-        {this.props.listing.rooms}&nbsp;Rooms&nbsp;&nbsp;
-        {this.props.listing.bathrooms}&nbsp;Bathrooms
-        {this.props.listing.userId === this.props.session ? (
+        {listing.rooms}&nbsp;Rooms&nbsp;&nbsp;
+        {listing.bathrooms}&nbsp;Bathrooms
+        {listing.userId === this.props.session ? (
 
-          <button onClick={() => this.props.deleteListing(this.props.listing.id)}>Delete Listing</button>
+          <button onClick={() => this.props.deleteListing(listing.id)}>Delete Listing</button>
         ) : null}
-      </li>
+        </Link>
+      </div>
     )
   }
 }

@@ -111,7 +111,7 @@
      flex-direction: column;
      width: 100px;
      height: 75px;
-     display: none;
+    //  display: none;
      position: absolute;
     
 }  
@@ -126,9 +126,9 @@
     cursor: pointer;
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
+// .dropdown:hover .dropdown-menu {
+//   display: block;
+// }
 .background-image {
   // position: relative;
   // width: 100%;
