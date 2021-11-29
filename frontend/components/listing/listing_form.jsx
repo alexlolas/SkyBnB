@@ -65,7 +65,7 @@ class ListingForm extends React.Component{
           <input type="text" value={this.state.capacity} onChange={this.update('capacity')}/>
         </label>
         <br />
-        <button value={this.props.formType}></button>
+        <button value={this.props.formType}>{this.props.formType}</button>
       </form>
     )
   }
