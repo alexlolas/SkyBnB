@@ -33,7 +33,7 @@ class Api::ListingsController < ApplicationController
     if @listing.destroy
       render :show
     else
-      render json: @lisint.errors.full_messages, status: 401
+      render json: @listing.errors.full_messages, status: 401
     end
   end
 
