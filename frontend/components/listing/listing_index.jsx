@@ -20,8 +20,8 @@ class ListingIndex extends React.Component {
                <ListingIndexItem  key={idx} session={this.props.session} listing={listing} deleteListing={this.props.deleteListing}/>
             ))}
         </ul>
-      )
       </div>
+      )
   }
 }
 
