@@ -4,7 +4,8 @@ import ListingIndex from "./listing_index";
 import { fetchListings, deleteListing } from "../../actions/listing_actions";
 
 const mSTP = state => ({
-  listings: Object.values(state.entities.listings)
+  listings: Object.values(state.entities.listings),
+  session: state.session.id
 })
 
 

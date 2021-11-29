@@ -10,8 +10,15 @@ class ListingIndexItem extends React.Component {
     return (
       <li>
         {this.props.listing.title}
-       
-        <button onClick={() => this.props.deleteListing(this.props.listing.id)}></button>
+        <br />
+        Holds &nbsp;{this.props.listing.capacity}
+        <br />
+        {this.props.listing.rooms}&nbsp;Rooms&nbsp;&nbsp;
+        {this.props.listing.bathrooms}&nbsp;Bathrooms
+        {this.props.listing.userId === this.props.session ? (
+
+          <button onClick={() => this.props.deleteListing(this.props.listing.id)}>Delete Listing</button>
+        ) : null}
       </li>
     )
   }

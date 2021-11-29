@@ -13,12 +13,15 @@ class ListingIndex extends React.Component {
 
   render (){
     return (
-      <ul>
-          {this.props.listings.map((listing, idx) => (
-             <ListingIndexItem  key={idx} listing={listing} deleteListing={this.props.deleteListing}/>
-          ))}
-      </ul>
-    )
+      <div className="listing-container">
+
+        <ul>
+            {this.props.listings.map((listing, idx) => (
+               <ListingIndexItem  key={idx} session={this.props.session} listing={listing} deleteListing={this.props.deleteListing}/>
+            ))}
+        </ul>
+      )
+      </div>
   }
 }
 
