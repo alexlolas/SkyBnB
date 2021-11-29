@@ -1,6 +1,6 @@
-class ReviewsController < ApplicationController
+class Api::ReviewsController < ApplicationController
   def create
-    @review = Reivew.new(review_params)
+    @review = Review.new(review_params)
     
     if @review.save
       render :show
