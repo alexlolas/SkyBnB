@@ -9,6 +9,7 @@ import ListingIndexContainer from './listing/listing_index_container'
 
 import ListingFormContainer from './listing/listing_form_container'
 import EditListingContainer from "./listing/edit_listing_container";
+import ReviewFormContainer from "./review/review_form_container";
 import ListingShowContainer from './listing/listing_show_container'
 import NavbarContainer from './navbar/navbar_container'
 import SplashContainer from "./splash/splash_container";
@@ -23,6 +24,8 @@ const App = () => (
         <Route exact path='/listings/:listingId' component={ListingShowContainer}/>
         <Route exact path='/listings/create' component={ListingFormContainer} />
         <Route exact path='/listings/:listingId/edit' component={EditListingContainer}/>
+        <Route exact path='/reviews/:create' component={ReviewFormContainer}/>
+
 
       </Switch>
     {/* <Route path='/signup' component={props => <SignupContainer {...props}/>}/>
