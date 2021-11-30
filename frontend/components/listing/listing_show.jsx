@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class ListingShow extends React.Component {
   constructor(props){
@@ -12,7 +13,13 @@ class ListingShow extends React.Component {
     if (!this.props.listing) return null
     // if (!this.props.users) return null
     return (
-      <div>
+      <div className="index-show-container">
+        <div className='listing-show-header'>
+          <Link className='listings-index' to='/listings'> <i className="fas fa-angle-left"></i>All listings</Link>
+
+          <h1 className='listing-show-title'>{this.props.listing.title}</h1>
+          <div className='listing-show-location'>· {this.props.listing.city},{this.props.listing.state},{this.props.listing.zipCode}</div>
+        </div>
         <label> Description:&nbsp;
 
           {this.props.listing.description}

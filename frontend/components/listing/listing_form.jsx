@@ -57,19 +57,31 @@ class ListingForm extends React.Component{
   render(){
     console.log(this.state)
     return (
+      <div>
+      
+       
       <form onSubmit={this.handleSubmit}>
-        <h2>{this.props.formType}</h2>
+     
         {this.pageIndex === 0 ? (
-          <div className="login-form-left"> 
-          <div className="login-form-left"></div>
-            <label> What kind of place will you host
-              <input className="form-input" type='button' value='House' onClick={() => this.handleClick('House')} />
-              <input className="form-input" type='button' value='Cottage' onClick={() => this.handleClick('Cottage')}/>
-              <input className="form-input" type='button' value='Apartment' onClick={() => this.handleClick('Apartment')}/>
-              <input className="form-input" type='button' value='Hotel' onClick={() => this.handleClick('Hotel')}/>
-            </label>
-            <button onClick={this.handlePageIndex}>Next</button>
-          </div>
+          <div className="form-container">
+             <div className="login-form-left">
+                  <label className="form-label"> What kind of place will you host? </label>
+                </div>
+                <div className="login-form-right">
+            <div className='listing-type'>
+
+                <input tabIndex='-1' className="form-input-cottage" type='button' value='Cottage' onClick={() => this.handleClick('Cottage')}/>
+                <input className="form-input-house" type='button' value='House' onClick={() => this.handleClick('House')} />
+                <input className="form-input-apartment" type='button' value='Apartment' onClick={() => this.handleClick('Apartment')}/>
+                <input className="form-input-hotel" type='button' value='Hotel' onClick={() => this.handleClick('Hotel')}/>
+                <div className='next-position'>
+
+              <button className='next-button' onClick={this.handlePageIndex}>Next</button>
+                </div>
+            </div>
+              </div>
+            </div>
+    
         ): null}     
         {this.pageIndex === 1 ? (
           <div>
@@ -132,10 +144,13 @@ class ListingForm extends React.Component{
           <div>
             Upload a photo of the place!
             <input type="file" onChange={this.handleFile} />
+            <button value={this.props.formType}>{this.props.formType}</button>
           </div>
         ): null}
-        <button value={this.props.formType}>{this.props.formType}</button>
       </form>
+ 
+      </div>
+  
     )
   }
 }

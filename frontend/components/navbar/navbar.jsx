@@ -37,7 +37,7 @@ class Navbar extends React.Component{
     
     if (!this.props.currentUser) {
       return (
-        <div>
+     
 
         <div className="header">
           
@@ -72,11 +72,11 @@ class Navbar extends React.Component{
             </div>
             </div>     
         </div>
-        </div>
+      
       )
     } else {
       return (
-        <div>
+        
         <div className="header">
             <Link to='/'>
               <img className="header-icon"
@@ -115,7 +115,7 @@ class Navbar extends React.Component{
         </div>
          
 
-        </div>
+        
       )
     }
   }
