@@ -55,11 +55,9 @@ class ListingForm extends React.Component{
   }
 
   render(){
-    console.log(this.state)
+    
     return (
-      <div>
-      
-       
+      <div>    
       <form onSubmit={this.handleSubmit}>
      
         {this.pageIndex === 0 ? (
@@ -67,21 +65,50 @@ class ListingForm extends React.Component{
              <div className="login-form-left">
                   <label className="form-label"> What kind of place will you host? </label>
                 </div>
-                <div className="login-form-right">
+          <div className="login-form-right">
             <div className='listing-type'>
-
-                <input tabIndex='-1' className="form-input-cottage" type='button' value='Cottage' onClick={() => this.handleClick('Cottage')}/>
-                <input className="form-input-house" type='button' value='House' onClick={() => this.handleClick('House')} />
-                <input className="form-input-apartment" type='button' value='Apartment' onClick={() => this.handleClick('Apartment')}/>
-                <input className="form-input-hotel" type='button' value='Hotel' onClick={() => this.handleClick('Hotel')}/>
-                <div className='next-position'>
-
-              <button className='next-button' onClick={this.handlePageIndex}>Next</button>
-                </div>
+                {this.state.houseType === 'Cottage' ? 
+                  <div>
+                    <input id='color-change' className="form-input-cottage" type='button' value='Cottage' onClick={() => this.handleClick('Cottage')}/>
+                    <input className="form-input-house" type='button' value='House' onClick={() => this.handleClick('House')} />
+                    <input className="form-input-apartment" type='button' value='Apartment' onClick={() => this.handleClick('Apartment')}/>
+                    <input className="form-input-hotel" type='button' value='Hotel' onClick={() => this.handleClick('Hotel')}/>
+                  </div>
+                : this.state.houseType === 'House' ?
+                   <div>
+                     <input className="form-input-cottage" type='button' value='Cottage' onClick={() => this.handleClick('Cottage')}/>
+                     <input id='color-change'className="form-input-house" type='button' value='House' onClick={() => this.handleClick('House')} />
+                     <input className="form-input-apartment" type='button' value='Apartment' onClick={() => this.handleClick('Apartment')}/>
+                     <input className="form-input-hotel" type='button' value='Hotel' onClick={() => this.handleClick('Hotel')}/>
+                   </div>
+                : this.state.houseType === 'Apartment' ?
+                    <div>
+                      <input className="form-input-cottage" type='button' value='Cottage' onClick={() => this.handleClick('Cottage')}/>
+                      <input className="form-input-house" type='button' value='House' onClick={() => this.handleClick('House')} />
+                      <input id='color-change'className="form-input-apartment" type='button' value='Apartment' onClick={() => this.handleClick('Apartment')}/>
+                      <input className="form-input-hotel" type='button' value='Hotel' onClick={() => this.handleClick('Hotel')}/>
+                    </div>
+                : this.state.houseType === 'Hotel' ?
+                    <div>
+                      <input className="form-input-cottage" type='button' value='Cottage' onClick={() => this.handleClick('Cottage')} />
+                      <input className="form-input-house" type='button' value='House' onClick={() => this.handleClick('House')} />
+                      <input  className="form-input-apartment" type='button' value='Apartment' onClick={() => this.handleClick('Apartment')} />
+                      <input id='color-change' className="form-input-hotel" type='button' value='Hotel' onClick={() => this.handleClick('Hotel')} />
+                    </div>
+              : 
+                    <div>
+                        <input className="form-input-cottage" type='button' value='Cottage' onClick={() => this.handleClick('Cottage')} />
+                        <input className="form-input-house" type='button' value='House' onClick={() => this.handleClick('House')} />
+                        <input  className="form-input-apartment" type='button' value='Apartment' onClick={() => this.handleClick('Apartment')} />
+                        <input  className="form-input-hotel" type='button' value='Hotel' onClick={() => this.handleClick('Hotel')} />
+                    </div>
+              }
+            <div className='next-position'>
+                <button className='next-button' onClick={this.handlePageIndex}>Next</button>
             </div>
-              </div>
-            </div>
-    
+          </div>
+        </div>
+      </div>
         ): null}     
         {this.pageIndex === 1 ? (
           <div>
