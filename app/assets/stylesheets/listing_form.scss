@@ -1,0 +1,29 @@
+
+.login-form-left{
+  height: 100%;
+  width: 50%;
+}
+
+.form-input{
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  align-items: center;
+  border: 1px solid lightgray;
+  justify-content: space-between;
+  cursor: pointer;
+  min-height: 68px;
+  box-sizing: border-box;
+  width: 464px;
+  background: white;
+  margin-left: 26px;
+  margin-top: 50px;
+
+
+}
+
+
+
+ .form-input:hover{
+    border: 2px solid black
+  }
