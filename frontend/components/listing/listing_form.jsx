@@ -5,7 +5,8 @@ class ListingForm extends React.Component{
     super(props)
     this.state = this.props.listing
     this.handleSubmit = this.handleSubmit.bind(this)
-    console.log(this.props)
+    this.pageIndex = 0
+    this.handlePageIndex = this.handlePageIndex.bind(this)
   }
 
   handleSubmit(e){
@@ -17,17 +18,30 @@ class ListingForm extends React.Component{
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
+  handlePageIndex(e){
+    e.preventDefault()
+    this.pageIndex += 1
+    this.forceUpdate()
+  }
+
   render(){
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>{this.props.formType}</h2>
-        <label> Title
-          <input type="text" value={this.state.title} onChange={this.update('title')}/>
-        </label>
-        <br />
+        {this.pageIndex === 0 ? (
+          <div>
+            <label> Title
+              <input type="text" value={this.state.title} onChange={this.update('title')}/>
+            </label>
+            <button onClick={this.handlePageIndex}>Next</button>
+          </div>
+        ): null}
+        
+        {this.pageIndex === 1 ? (
         <label> Description
           <input type="text" value={this.state.description} onChange={this.update('description')}/>
         </label>
+        ) : null}
         <br />
         <label> State
           <input type="text" value={this.state.state} onChange={this.update('state')}/>

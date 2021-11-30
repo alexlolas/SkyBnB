@@ -9,3 +9,7 @@ export const SearchIcon = () => (
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false"><g fill="none"><path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path></g></svg>
 
 )
+
+export const Suitcase = () => (
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"  role="presentation" focusable="false"><g stroke="none"><path d="M40 13H8a1 1 0 0 0-.993.883L7 14v27h33a1 1 0 0 0 .993-.883L41 40V14a1 1 0 0 0-.883-.993L40 13z" fillOpacity=".2"></path><path d="M30 3a3 3 0 0 1 2.995 2.824L33 6v3h7a5 5 0 0 1 4.995 4.783L45 14v26a5 5 0 0 1-4.783 4.995L40 45H8a5 5 0 0 1-4.995-4.783L3 40V14a5 5 0 0 1 4.783-4.995L8 9h7V6a3 3 0 0 1 2.824-2.995L18 3h12zm-15 8H8a3 3 0 0 0-2.995 2.824L5 14v26a3 3 0 0 0 2.824 2.995L8 43h7V11zm16 0H17v32h14V11zm9 0h-7v32h7a3 3 0 0 0 2.995-2.824L43 40V14a3 3 0 0 0-2.824-2.995L40 11zM30 5H18a1 1 0 0 0-.993.883L17 6v3h14V6a1 1 0 0 0-.883-.993L30 5z"></path></g></svg>
+)
