@@ -18,7 +18,6 @@ class Navbar extends React.Component{
     
       if (!this.dropdownRef.contains(e.target)) {
         this.setState({show: false})
-        console.log('mount')
       }
     }
     
@@ -30,7 +29,6 @@ class Navbar extends React.Component{
   }
 
   handleClick(){
-    console.log('click')
   
     this.setState({ show: !this.state.show })
   }

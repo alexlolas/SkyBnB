@@ -1,11 +1,14 @@
 
-export const createListing = listing => (
-  $.ajax({
+export const createListing = listing => {
+  debugger
+  return $.ajax({
     method: 'POST',
     url: '/api/listings',
-    data: {listing}
+    data: listing,
+    contentType: false,
+    processData: false
   })
-)
+}
 
 export const fetchListing = listing => (
   $.ajax ({

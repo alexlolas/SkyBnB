@@ -12,6 +12,7 @@ class Api::ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
+  
     if @listing.save
       render :show
     else
@@ -42,7 +43,7 @@ class Api::ListingsController < ApplicationController
   def listing_params
     params.require(:listing).permit(:title, :description, :state, 
                                     :city, :zip_code, :address, :price, 
-                                    :user_id, :rooms, :num_beds, :bathrooms, :capacity)
+                                    :user_id, :rooms, :num_beds, :bathrooms, :capacity, :house_type, :photo)
   end
 
 

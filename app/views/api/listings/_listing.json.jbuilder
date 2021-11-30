@@ -11,5 +11,6 @@ json.extract! listing,
             :zip_code,
             :address,
             :num_beds,
-            :capacity
+            :capacity,
+            :house_type
       json.photoUrl url_for(listing.photo)
