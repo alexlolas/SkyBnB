@@ -5,12 +5,13 @@ class ReviewForm extends React.Component{
   constructor(props){
     super(props)
     this.state = this.props.review
-
+  
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleSubmit(e){
     e.preventDefault()
+
     this.props.createReview(this.state)
   }
 
@@ -48,7 +49,7 @@ class ReviewForm extends React.Component{
         </label>
         <br />
         <label> Description: 
-        <input type="text" value={this.state.body} onChange={this.update('body')}  />
+        <textarea type="text" value={this.state.body} onChange={this.update('body')}  />
         </label>
         <br />
         <button>Post Review</button>

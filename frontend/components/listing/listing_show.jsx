@@ -7,7 +7,7 @@ import ReviewsFormContainer from "../review/review_form_container"
 class ListingShow extends React.Component {
   constructor(props){
     super(props)
- 
+    
   }
 
   componentDidMount(){
@@ -16,13 +16,13 @@ class ListingShow extends React.Component {
   render(){
     if (!this.props.listing) return null
     if (!this.props.reviews) return null
-    console.log(this.props)
     let reviewList = this.props.reviews.map((review, idx) => {
       return (
         <ReviewIndexItem key={idx} review={review} />
 
       )
     })
+    console.log(this.props.listing.id)
     // if (!this.props.users) return null
     return (
       <div className="index-show-container">
@@ -82,7 +82,7 @@ class ListingShow extends React.Component {
             <div className="reviews-header">
               {reviewList}
             </div>
-            <ReviewsFormContainer listingId={this.props.id} />
+            <ReviewsFormContainer listingId={this.props.listing.id} />
           
           </div>
       </div>

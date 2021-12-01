@@ -1,6 +1,5 @@
 
 export const createListing = listing => {
-    console.log(listing)
    return $.ajax({
     method: 'POST',
     url: '/api/listings',
@@ -32,7 +31,6 @@ export const fetchListings = () => (
 )
 
 export const updateListing = (listing, listingId) => {
-  console.log(listingId)
    return  $.ajax ({
       method: 'PATCH',
       url: `/api/listings/${listing.get('id')}`,
