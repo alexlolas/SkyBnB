@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {Minihouse, Star, Door, Calender} from '../svg/svg'
 
 class ListingShow extends React.Component {
   constructor(props){
@@ -16,56 +17,58 @@ class ListingShow extends React.Component {
       <div className="index-show-container">
         <div className='listing-show-header'>
           <Link className='listings-index' to='/listings'> <i className="fas fa-angle-left"></i>All listings</Link>
-
+          
           <h1 className='listing-show-title'>{this.props.listing.title}</h1>
-          <div className='listing-show-location'>· {this.props.listing.city},{this.props.listing.state},{this.props.listing.zipCode}</div>
+          <div className='listing-show-location'>· {this.props.listing.city}, {this.props.listing.state}, {this.props.listing.zipCode}</div>
+          <img className='listing-show-img' src={this.props.listing.photoUrl} />
+          <div className="show-intro">Entire residential {this.props.listing.houseType} hosted by {this.props.listing.hostName}</div>
         </div>
-        <label> Description:&nbsp;
+        <div className="listing-show-houseinfo">
 
-          {this.props.listing.description}
-        </label>
-        <br />
-        <label> State&nbsp;
-          {this.props.listing.state}
-        </label>
-        <br />
-        <label> City&nbsp;
-          {this.props.listing.city}
-        </label>
-        <br />
-        <label> Address&nbsp;
-          {this.props.listing.address}
-        </label>
-        <br />
-        <label> Zip Code&nbsp;
-          {this.props.listing.zipCode}
-        </label>
-        <br />
-        <label> Price&nbsp;
-          ${this.props.listing.price}
-
-        </label>
-        <br />
-        <label> Number of rooms&nbsp;
-          {this.props.listing.rooms}
-
-        </label>
-        <br />
-        <label> Number of beds&nbsp;
-          {this.props.listing.numBeds}
-        </label>
-        <br />
-        <label> Number of bathrooms&nbsp;
-          {this.props.listing.bathrooms}
-
-        </label>
-        <br />
-        <label> Holds&nbsp;
-          {this.props.listing.capacity} people
-
-        </label>
-        <br />
-            
+        {this.props.listing.capacity}&nbsp;guests ·&nbsp;
+        {this.props.listing.rooms}&nbsp; bedrooms ·&nbsp;
+        {this.props.listing.numBeds} beds ·&nbsp;
+        {this.props.listing.bathrooms}&nbsp; baths
+        </div>
+        <div className='mid-page-dash'></div>
+        <div className="minihouse"> <Minihouse /></div>
+        <div className="suitcase-text" >Entire home</div>
+        <div className='suitcase-subtext'>You'll have the house to yourself.</div>
+        <div className="star"> <Star /></div>
+        <div className="suitcase-text" >Enhanced Clean</div>
+        <div className='suitcase-subtext'>This Host committed to Skybnb's 5-step enhanced cleaning process.</div>
+        <div className="star"> <Door /></div>
+        <div className="suitcase-text" >Self check-in</div>
+        <div className='suitcase-subtext'>Check yourself in with the lockbox.</div>
+        <div className="star"> <Calender /></div>
+        <div className="suitcase-text" >Free cancellation for 48 hours</div>
+        <div className='mid-page-dash'></div>
+        <div className="listing-description">{this.props.listing.description}</div>
+        <div className='mid-page-dash'></div>
+        <div className="amentities-head">What this place offers</div>
+        <div className='show-amentities'>
+        <div className='amentities-box'>
+          <div className='amentities-left-box'>
+          <div className='amentities-row-two'>· Kitchen </div>
+            <div className='amentities-row-two'>· Free parking on premises</div>
+          <div className='amentities-row-two'>· TV</div>
+          <div className='amentities-row-two'>· Dryer</div>
+          <div className='amentities-row-two'>· Patio or balcony</div>
+            </div>
+          
+          <div className='amentities-right-box'>
+            <div className='amentities-row-two'>· Wifi</div>
+            <div className='amentities-row-two'>· Private pool</div>
+            <div className='amentities-row-two'>· Washer</div>
+          
+          <div className='amentities-row-two'>· Air conditioning</div>
+          
+          <div className='amentities-row-two'>· Security Camera on property</div> 
+          </div>
+          </div>
+          <div className='mid-page-dash'></div>
+        
+      </div>
       </div>
     )
   }

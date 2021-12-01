@@ -21,7 +21,7 @@ class Api::ListingsController < ApplicationController
   end
 
   def update
-    @listing = Listing.find(params[:id])
+    @listing = Listing.find_by(id: params[:id])
     if @listing && @listing.update(listing_params)
       render :show
     else

@@ -1,7 +1,7 @@
 .index-show-container{
   height: 2480px;
-  margin-left: 180px;
-  margin-right: 180px;
+  margin-left: 25%;
+  margin-right: 250px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   
   .show-header{
@@ -30,4 +30,96 @@
   }
 }
 
+.listing-show-img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 560px;
+  height: 466px;
+  margin-top: 27px;
+}
+
+.show-intro {
+  font-size: 20px;
+  font-weight: 425;
+  margin-top: 25px;
+}
+
+.listing-show-houseinfo{
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 320;
+}
  
+.mid-page-dash {
+    border-top: 1px solid lightgray;
+    width: 650px;
+    margin-top: 32px
+  }
+
+.minihouse {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  fill: currentColor;
+  margin-top: 33px;
+  float: left;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.suitcase-text {
+  margin-top: 34px;
+  color: rgb(34, 34, 34);
+  font-size: 16px;
+  font-weight: 600;
+
+}
+
+.suitcase-subtext {
+  color: rgb(113, 113, 113);
+  font-size: 14px;
+  margin-top: 13px;
+  margin-left: 44px;
+  font-weight: 325;
+}
+
+.star{
+ display: inline-block;
+  height: 24px;
+  width: 24px;
+  fill: currentColor;
+  margin-top: 29px;
+  float: left;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.listing-description {
+  margin-top: 36px;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.amentities-box{
+  width: 650px;
+  display: flex;
+  align-items: left;
+}
+
+.amentities-left-box{
+  width: 325px
+}
+.amentities-right-box{
+  width: 325px
+}
+.amentities-head{
+  margin-top: 50px;
+  font-size: 22px;
+  font-weight: 425;
+}
+
+
+.amentities-row-two{
+  margin-top: 28px;
+}
+

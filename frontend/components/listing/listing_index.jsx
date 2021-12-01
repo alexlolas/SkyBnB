@@ -5,7 +5,6 @@ import { Suitcase } from "../svg/svg";
 class ListingIndex extends React.Component {
   constructor(props){
     super(props)
-    console.log(this.props)
   }
 
   componentDidMount() {
@@ -27,7 +26,7 @@ class ListingIndex extends React.Component {
           <div className="suitcase"
           ><Suitcase />
           </div>
-          <div className="text">&nbsp;Click on a listing to see more details and book your trip today!</div>
+          <div className="text">&nbsp; &nbsp; &nbsp; &nbsp;   Click on a listing to see more details and book your trip today!</div>
         <ul className="listing-container">
             {this.props.listings.map((listing, idx) => (
                <ListingIndexItem  key={idx} session={this.props.session} listing={listing} removeListing={this.props.removeListing}/>

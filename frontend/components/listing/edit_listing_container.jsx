@@ -11,8 +11,9 @@ class EditListingForm extends React.Component{
 
   render(){
     const {action, formType, listing} = this.props
-
+    
     if (!listing) return null;
+    
 
     return (
       <ListingForm action={action} formType={formType} listing={listing} />
@@ -21,10 +22,15 @@ class EditListingForm extends React.Component{
 }
 
 
-const mSTP = (state, ownProps) => ({
-  listing: state.entities.listings[ownProps.match.params.listingId],
-  formType: 'Update Listing'
-})
+const mSTP = (state, ownProps) => {
+
+  return {
+  
+    listing: state.entities.listings[ownProps.match.params.listingId],
+    formType: 'Update Listing'
+  }
+    
+}
 
 const mDTP = dispatch => ({
   fetchListing: listing => dispatch(fetchListing(listing)),
