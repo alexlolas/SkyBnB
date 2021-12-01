@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {Minihouse, Star, Door, Calender} from '../svg/svg'
+import ReviewIndexItem from "../review/review_index_item";
 
 class ListingShow extends React.Component {
   constructor(props){
     super(props)
+ 
   }
 
   componentDidMount(){
@@ -12,6 +14,14 @@ class ListingShow extends React.Component {
   }
   render(){
     if (!this.props.listing) return null
+    if (!this.props.reviews) return null
+    console.log(this.props)
+    let reviewList = this.props.reviews.map(review => {
+      return (
+        <ReviewIndexItem review={review} />
+
+      )
+    })
     // if (!this.props.users) return null
     return (
       <div className="index-show-container">
@@ -67,7 +77,13 @@ class ListingShow extends React.Component {
           </div>
           </div>
           <div className='mid-page-dash'></div>
-        
+          <div className="reviews-box">
+            <div className="reviews-header">
+              {reviewList}
+            </div>
+            
+          
+          </div>
       </div>
       </div>
     )

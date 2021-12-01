@@ -35,7 +35,7 @@ export const updateListing = (listing, listingId) => {
   console.log(listingId)
    return  $.ajax ({
       method: 'PATCH',
-      url: `/api/listings/${listingId}`,
+      url: `/api/listings/${listing.get('id')}`,
       data: listing,
       contentType: false,
       processData: false

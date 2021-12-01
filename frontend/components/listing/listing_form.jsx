@@ -31,6 +31,7 @@ class ListingForm extends React.Component{
     formData.append('listing[photo]', this.state.photoFile);
     formData.append('listing[house_type]', this.state.houseType);
     formData.append('listing[host_name]', this.state.hostName);
+    formData.append('id', this.state.id);
 
     this.props.action(formData, this.props.listing.id)
   }

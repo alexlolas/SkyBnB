@@ -6,6 +6,7 @@ import ListingShow from "./listing_show";
 const mSTP = (state, ownProps) => ({
   currentUser: state.session.id,
   listing: state.entities.listings[ownProps.match.params.listingId],
+  reviews: Object.values(state.entities.reviews)
   // users: state.entites.users
 })
 

@@ -1,6 +1,7 @@
 import { RECEIVE_REVIEW,
          RECEIVE_REVIEWS, 
          REMOVE_REVIEW} from '../actions/review_actions'
+import { RECEIVE_LISTING } from '../actions/listing_actions'
 
 
 const reviewReducer = (state = {}, action) => {
@@ -15,6 +16,8 @@ const reviewReducer = (state = {}, action) => {
     case REMOVE_REVIEW:
       delete nextState[action.reviewId]
       return nextState
+    case RECEIVE_LISTING:
+      return action.listing.reviews
     default:
       return state;
   }
