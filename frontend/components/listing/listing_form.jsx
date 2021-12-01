@@ -9,6 +9,7 @@ class ListingForm extends React.Component{
     this.handlePageIndex = this.handlePageIndex.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.handleFile = this.handleFile.bind(this)
+    this.handleDecrement = this.handleDecrement.bind(this)
     
   }
 
@@ -41,6 +42,12 @@ class ListingForm extends React.Component{
   handlePageIndex(e){
     e.preventDefault()
     this.pageIndex += 1
+    this.forceUpdate()
+  }
+
+  handleDecrement(e){
+    e.preventDefault()
+    this.pageIndex -= 1
     this.forceUpdate()
   }
 
@@ -111,67 +118,91 @@ class ListingForm extends React.Component{
       </div>
         ): null}     
         {this.pageIndex === 1 ? (
-          <div>
-            <label> Title your listing and give a brief summary
-              <input type="text" value={this.state.title} onChange={this.update('title')} />
-              <input type="text" value={this.state.description} onChange={this.update('description')}/>
-            </label>
-            <button onClick={this.handlePageIndex}>Next</button>
+            <div className="form-container">
+              <div className="login-form-left">
+                <label className="form-label"> Title your listing and give a brief summary </label>
+              </div>
+              <div className="login-form-right">
+                 <div className='listing-type'>
+                <div id='input-headers'>Title</div>
+              <input placeholder="Give your place an enticing title!" type="text" value={this.state.title} onChange={this.update('title')} />
+                  <div id='input-headers'>Description</div>
+              <input placeholder='Describe your place' type="text" value={this.state.description} onChange={this.update('description')}/>
+                  <div className='next-back-position'>
+                <button className='next-button' onClick={this.handleDecrement}>Back</button>
+                <button className='next-button' onClick={this.handlePageIndex}>Next</button>
+              </div>
+              </div>
+              </div>
           </div>
         ) : null}
         {this.pageIndex === 2 ? (
-          <div>
-            Where is your listing located?
-            <br />
-        <label> State
-          <input type="text" value={this.state.state} onChange={this.update('state')}/>
-        </label>
-        <br />
-        <label> City
-          <input type="text" value={this.state.city} onChange={this.update('city')}/>
-        </label>
-        <br />
-        <label> Zip Code
-          <input type="text" value={this.state.zipCode} onChange={this.update('zipCode')}/>
-        </label>
-        <br />
-        <label> Address
-          <input type="text" value={this.state.address} onChange={this.update('address')}/>
-        </label>
-            <button onClick={this.handlePageIndex}>Next</button>
+          <div className="form-container">
+              <div className="login-form-left">
+                <label className="form-label"> Where is your listing located?</label>
+              </div>
+           <div className="login-form-right">
+              <div className='listing-type'>
+          <div id='input-headers'>Address</div>
+          <input placeholder="Address is kept private until booking" type="text" value={this.state.address} onChange={this.update('address')}/>
+        <div id='input-headers'>City</div>
+          <input placeholder="Full name of the city" type="text" value={this.state.city} onChange={this.update('city')}/>   
+        <div id='input-headers'>State</div>
+          <input placeholder="Enter your states abbreviations ex: CA" type="text" value={this.state.state} onChange={this.update('state')}/> 
+        <div id='input-headers'>Zip Code</div>
+          <input placeholder="Closest applicable zip code" type="text" value={this.state.zipCode} onChange={this.update('zipCode')}/>
+
+        <div className='next-back-position'>
+           <button className='next-button' onClick={this.handleDecrement}>Back</button>
+            <button className='next-button'onClick={this.handlePageIndex}>Next</button>
+         </div>
           </div>
+          </div>
+            </div>
         ) : null}
         {this.pageIndex === 3 ? (
-          <div> How many guests would you like to welcome?
-
-            <label> Price
-              <input type="text" value={this.state.price} onChange={this.update('price')}/>
-            </label>
-            <br />
-            <label> Rooms
-              <input type="text" value={this.state.rooms} onChange={this.update('rooms')}/>
-            </label>
-            <br />
-            <label> Number of Beds
-              <input type="text" value={this.state.numBeds} onChange={this.update('numBeds')}/>
-            </label>
-            <br />
-            <label> Bathrooms
-              <input type="text" value={this.state.bathrooms} onChange={this.update('bathrooms')}/>
-            </label>
-            <br />
-            <label> Capacity
-              <input type="text" value={this.state.capacity} onChange={this.update('capacity')}/>
-            </label>
-            <button onClick={this.handlePageIndex}>Next</button>
-            <br />
+           <div className="form-container">
+                <div className="login-form-left">
+                  <label className="form-label"> How many guests can your place host? </label>
+                </div>
+              <div className="login-form-right">
+               <div className='listing-type'>
+          
+                    <div id='input-headers'>Rooms</div>
+              <input placeholder="Number of bedrooms" type="text" value={this.state.rooms} onChange={this.update('rooms')}/>
+                    <div id='input-headers'>Number of Beds</div>
+                  <input placeholder="Total of all beds in any room" type="text" value={this.state.numBeds} onChange={this.update('numBeds')}/>
+      
+                    <div id='input-headers'>Bathrooms</div>
+                  <input placeholder="Total of full and half bathrooms"type="text" value={this.state.bathrooms} onChange={this.update('bathrooms')}/>
+    
+                    <div id='input-headers'>Capacity</div>
+                  <input placeholder="Maximum amount of guests" type="text" value={this.state.capacity} onChange={this.update('capacity')}/>
+            <div id='input-headers'>Price</div>
+                  <input placeholder="Price per night" type="text" value={this.state.price} onChange={this.update('price')}/>
+      
+                  <div className='next-back-position'>
+                    <button className='next-button' onClick={this.handleDecrement}>Back</button>
+                    <button className='next-button' onClick={this.handlePageIndex}>Next</button>
+                  </div>
+            </div>
+          </div>
           </div>
         ) : null }
         {this.pageIndex === 4 ? (
-          <div>
-            Upload a photo of the place!
-            <input type="file" onChange={this.handleFile} />
-            <button value={this.props.formType}>{this.props.formType}</button>
+              <div className="form-container">
+                <div className="login-form-left">
+                  <label className="form-label"> Upload a photo of the place!</label>
+                </div>
+                <div className="login-form-right">
+                  <div className='listing-type'>
+            <input id="file-search" type="file" onChange={this.handleFile} />
+                  <div className='next-back-position'>
+                    <button className='next-button' onClick={this.handleDecrement}>Back</button>
+                    <button className='next-button' value={this.props.formType}>{this.props.formType}!</button>
+                  </div>
+            </div>
+          </div>
           </div>
         ): null}
       </form>

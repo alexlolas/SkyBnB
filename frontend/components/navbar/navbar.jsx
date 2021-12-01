@@ -56,7 +56,8 @@ class Navbar extends React.Component{
           </div>
         
             <div className="header-right" >
-              Become a host
+              <Link className="create-listing-link" to='/listings/create'> Become a host
+              </Link>
               <div className="dropdown" ref={div => (this.dropdownRef = div)}>
                   <div className="far fa-user-circle"  onClick={this.handleClick} ></div>
               
@@ -94,7 +95,8 @@ class Navbar extends React.Component{
         
             {/* <i className="far fa-user-circle"></i> */}
             <div className="header-right">
-              Become a host
+            <Link className="create-listing-link" to='/listings/create'> Become a host
+            </Link>
               <div className="dropdown" ref={div => (this.dropdownRef = div)}>
             {/* <div>Become a host</div> */}
                 <div className="far fa-user-circle" onClick={this.handleClick}></div>
