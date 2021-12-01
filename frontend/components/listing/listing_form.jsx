@@ -30,6 +30,7 @@ class ListingForm extends React.Component{
     formData.append('listing[capacity]', this.state.capacity);
     formData.append('listing[photo]', this.state.photoFile);
     formData.append('listing[house_type]', this.state.houseType);
+    formData.append('listing[host_name]', this.state.hostName);
 
     this.props.action(formData, this.props.listing.id)
   }
@@ -128,6 +129,8 @@ class ListingForm extends React.Component{
               <input placeholder="Give your place an enticing title!" type="text" value={this.state.title} onChange={this.update('title')} />
                   <div id='input-headers'>Description</div>
               <input placeholder='Describe your place' type="text" value={this.state.description} onChange={this.update('description')}/>
+                  <div id='input-headers'>Host name</div>
+              <input placeholder='First and last name' type="text" value={this.state.hostName} onChange={this.update('hostName')}/>
                   <div className='next-back-position'>
                 <button className='next-button' onClick={this.handleDecrement}>Back</button>
                 <button className='next-button' onClick={this.handlePageIndex}>Next</button>
@@ -196,7 +199,7 @@ class ListingForm extends React.Component{
                 </div>
                 <div className="login-form-right">
                   <div className='listing-type'>
-            <input id="file-search" type="file" onChange={this.handleFile} />
+            <input className="file-search" type="file" onChange={this.handleFile} />
                   <div className='next-back-position'>
                     <button className='next-button' onClick={this.handleDecrement}>Back</button>
                     <button className='next-button' value={this.props.formType}>{this.props.formType}!</button>

@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-validates :title, :description, :state, :city, :zip_code, presence: true
+validates :title, :description, :state, :city, :zip_code, :host_name, presence: true
 validates :address, :price, :user_id, :rooms, :num_beds, :house_type, presence: true
 validates :bathrooms, :capacity, presence: true
 
