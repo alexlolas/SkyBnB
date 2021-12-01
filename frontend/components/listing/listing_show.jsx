@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {Minihouse, Star, Door, Calender} from '../svg/svg'
 import ReviewIndexItem from "../review/review_index_item";
+import ReviewsFormContainer from "../review/review_form_container"
 
 class ListingShow extends React.Component {
   constructor(props){
@@ -16,9 +17,9 @@ class ListingShow extends React.Component {
     if (!this.props.listing) return null
     if (!this.props.reviews) return null
     console.log(this.props)
-    let reviewList = this.props.reviews.map(review => {
+    let reviewList = this.props.reviews.map((review, idx) => {
       return (
-        <ReviewIndexItem review={review} />
+        <ReviewIndexItem key={idx} review={review} />
 
       )
     })
@@ -81,7 +82,7 @@ class ListingShow extends React.Component {
             <div className="reviews-header">
               {reviewList}
             </div>
-            
+            <ReviewsFormContainer listingId={this.props.id} />
           
           </div>
       </div>

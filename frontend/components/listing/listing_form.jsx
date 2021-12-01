@@ -36,8 +36,7 @@ class ListingForm extends React.Component{
     this.props.action(formData, this.props.listing.id)
   }
 
-  update(field){
-    
+  update(field){    
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
