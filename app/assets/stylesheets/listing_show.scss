@@ -95,6 +95,8 @@
 }
 
 .listing-description {
+  display: block;
+  width: 650px;
   margin-top: 36px;
   font-size: 17px;
   font-weight: 300;
@@ -124,10 +126,27 @@
 }
 
 .reviews-box {
-  width: 650px
+  width: 650px;
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.reviews-header {
-  margin-top: 36px;
+.reviews-box-left {
+  width: 325px;
+  display: flex;
+  flex-direction: column;
 }
+.reviews-box-right {
+  margin-left: 75px;
+  width: 325px;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-item{
+}
+
+
+
 

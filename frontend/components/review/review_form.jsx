@@ -22,38 +22,39 @@ class ReviewForm extends React.Component{
   render(){
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label> Title: 
-        <input type="text" value={this.state.reviewTitle} onChange={this.update('reviewTitle')}  />
-        </label>
-        <br />
+      <form className='form-box' onSubmit={this.handleSubmit}>
+        <div className="review-form-text">Write a review!</div>
         <label> 
         <input className="rating-radio" type="radio"  name='rating' value='1' onChange={this.update('rating')}  />
-         <FaStar key='1' size={30} color={this.state.rating >= 1 ? 'gold' : 'gray'}/>
+         <FaStar key='1' size={27} color={this.state.rating >= 1 ? 'red' : 'gray'}/>
         </label>
         <label> 
           <input className="rating-radio" type="radio"  name='rating' value='2' onChange={this.update('rating')}  />
-         <FaStar key='2' size={30} color={this.state.rating >= 2 ? 'gold' : 'gray'}/>
+          <FaStar key='2' size={27} color={this.state.rating >= 2 ? 'red' : 'gray'}/>
         </label>
         <label> 
           <input className="rating-radio" type="radio"  name='rating' value='3' onChange={this.update('rating')}  />
-         <FaStar key='3' size={30} color={this.state.rating >= 3 ? 'gold' : 'gray'}/>
+          <FaStar key='3' size={27} color={this.state.rating >= 3 ? 'red' : 'gray'}/>
         </label>
         <label> 
           <input className="rating-radio" type="radio"  name='rating' value='4' onChange={this.update('rating')}  />
-         <FaStar key='4' size={30} color={this.state.rating >= 4 ? 'gold' : 'gray'}/>
+          <FaStar key='4' size={27} color={this.state.rating >= 4 ? 'red' : 'gray'}/>
         </label>
         <label> 
           <input className="rating-radio" type="radio"  name='rating' value='5' onChange={this.update('rating')}  />
-         <FaStar key='5' size={30} color={this.state.rating >= 5 ? 'gold' : 'gray'}/>
+         <FaStar key='5' size={27} color={this.state.rating >= 5 ? 'red' : 'gray'}/>
         </label>
-        <br />
-        <label> Description: 
-        <textarea type="text" value={this.state.body} onChange={this.update('body')}  />
-        </label>
-        <br />
-        <button>Post Review</button>
+        <div className="review-box">
+          <div className='review-inputs-text'> Title </div>
+        
+        <input className="text-inputs"type="text" value={this.state.reviewTitle} onChange={this.update('reviewTitle')}  />
+          <div className='review-inputs-text'> Name </div>
+            <input className="text-inputs" type="text" value={this.state.name} onChange={this.update('name')}  />
+          <div className='review-inputs-text'> Description </div>
+          <textarea placeholder='Describe your stay!' className='form-description'type="text" value={this.state.body} onChange={this.update('body')}  />
 
+        <button className="create-post" >Post Review</button>
+        </div>
       </form>
     )
   }

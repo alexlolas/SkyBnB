@@ -9,6 +9,7 @@ const mSTP = (state, ownProps) => ({
     reviewTitle: '',
     rating: '',
     body: '',
+    name: '',
       listingId: parseInt(ownProps.listingId),
     guestId: state.session.id
   }

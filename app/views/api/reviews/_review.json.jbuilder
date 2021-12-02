@@ -4,4 +4,5 @@ json.extract! review,
             :rating,
             :body,
             :listing_id,
-            :guest_id
+            :guest_id,
+            :name

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import {Minihouse, Star, Door, Calender} from '../svg/svg'
 import ReviewIndexItem from "../review/review_index_item";
 import ReviewsFormContainer from "../review/review_form_container"
+import { FaStar } from 'react-icons/fa'
+
 
 class ListingShow extends React.Component {
   constructor(props){
@@ -15,14 +17,33 @@ class ListingShow extends React.Component {
   }
   render(){
     if (!this.props.listing) return null
-    if (!this.props.reviews) return null
-    let reviewList = this.props.reviews.map((review, idx) => {
+    let inverseReview = []
+    for (let i = this.props.reviews.length - 1; i >= 0 && inverseReview.length < 8; i--){
+      inverseReview.push(this.props.reviews[i])
+    }
+    let leftReview = inverseReview.slice(0, 4)
+    let rightReview = inverseReview.slice(4)
+    console.log(inverseReview)
+    console.log(rightReview)
+    let leftReviewBox = leftReview.map((review, idx) => {
       return (
         <ReviewIndexItem key={idx} review={review} />
 
       )
     })
-    console.log(this.props.listing.id)
+    let rightReviewBox = rightReview.map((review, idx) => {
+      return (
+        <ReviewIndexItem key={idx} review={review} />
+
+      )
+    })
+    let sum = 0
+    let ratingAverage = this.props.reviews.forEach(review => {
+      sum += review.rating
+    });
+
+    let average = sum / this.props.reviews.length
+  
     // if (!this.props.users) return null
     return (
       <div className="index-show-container">
@@ -30,7 +51,7 @@ class ListingShow extends React.Component {
           <Link className='listings-index' to='/listings'> <i className="fas fa-angle-left"></i>All listings</Link>
           
           <h1 className='listing-show-title'>{this.props.listing.title}</h1>
-          <div className='listing-show-location'>· {this.props.listing.city}, {this.props.listing.state}, {this.props.listing.zipCode}</div>
+          <div className='listing-show-location'><FaStar className="red-star"size={18} color={'red'} /> {average.toFixed(2)} ({this.props.reviews.length} reviews) · {this.props.listing.city}, {this.props.listing.state}, {this.props.listing.zipCode}</div>
           <img className='listing-show-img' src={this.props.listing.photoUrl} />
           <div className="show-intro">Entire residential {this.props.listing.houseType} hosted by {this.props.listing.hostName}</div>
         </div>
@@ -79,12 +100,17 @@ class ListingShow extends React.Component {
           </div>
           <div className='mid-page-dash'></div>
           <div className="reviews-box">
-            <div className="reviews-header">
-              {reviewList}
+            <div className="reviews-box-left">
+              <div className="review-item">{leftReviewBox}</div>
             </div>
+            <div className='reviews-box-right'>
+              <div className="review-item">{rightReviewBox}</div>
+
+            </div>
+          </div>
+            
             <ReviewsFormContainer listingId={this.props.listing.id} />
           
-          </div>
       </div>
       </div>
     )
