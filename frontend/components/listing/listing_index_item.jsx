@@ -10,7 +10,7 @@ class ListingIndexItem extends React.Component {
     const { listing } = this.props
     return (
       <div className='listing-box'>
-        <img className='listing-img' src={listing.photoUrl}/>
+        <img className='listing-img' src={listing.photoUrls[0]}/>
       <Link className='index-item-box' to={`/listings/${listing.id}`}>
           <div className='listing-location'>Entire residential home in {listing.city}</div>
           <div className="listing-title">{listing.title}</div>

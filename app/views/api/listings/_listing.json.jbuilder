@@ -14,4 +14,4 @@ json.extract! listing,
             :capacity,
             :house_type,
             :host_name
-      json.photoUrl url_for(listing.photo)
+      json.photoUrls listing.photos.map {|file| url_for(file)}

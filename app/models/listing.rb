@@ -13,7 +13,7 @@ validates :bathrooms, :capacity, presence: true
     primary_key: :id,
     class_name: :Review
   
-  has_one_attached :photo
+  has_many_attached :photos
 
 
 #  Listing.Create!({title: 'townhouse', description: 'big house', state: 'California', city: 'Millbrae', zip_code: 94030, address: 'home', price: 100, user_id: 2, rooms: 3, num_beds: 5, bathrooms: 3, capacity: 5}) 

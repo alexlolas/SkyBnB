@@ -19,7 +19,7 @@ const mSTP = state => ({
     capacity: '',
     houseType: '',
     hostName: '',
-    photoFile: null
+    photos: []
   },
   formType: 'Create Listing'
 })

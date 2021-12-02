@@ -3,18 +3,18 @@ import React from "react";
 class ListingForm extends React.Component{
   constructor(props){
     super(props)
-    this.state = this.props.listing
+    this.state = this.props.listing    
     this.handleSubmit = this.handleSubmit.bind(this)
     this.pageIndex = 0
     this.handlePageIndex = this.handlePageIndex.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.handleFile = this.handleFile.bind(this)
     this.handleDecrement = this.handleDecrement.bind(this)
-    
   }
 
   handleSubmit(e){
     e.preventDefault()
+
     const formData = new FormData();
     formData.append('listing[description]', this.state.description);
     formData.append('listing[title]', this.state.title);
@@ -28,12 +28,18 @@ class ListingForm extends React.Component{
     formData.append('listing[bathrooms]', this.state.bathrooms);
     formData.append('listing[num_beds]', this.state.numBeds);
     formData.append('listing[capacity]', this.state.capacity);
-    formData.append('listing[photo]', this.state.photoFile);
     formData.append('listing[house_type]', this.state.houseType);
     formData.append('listing[host_name]', this.state.hostName);
     formData.append('id', this.state.id);
 
+    if (this.state.photos.length > 0 && this.state.photos.length < 5){
+      for (let i = 0; i < this.state.photos.length; i++){
+        formData.append('listing[photos][]', this.state.photos[i])
+      }
+    }
+
     this.props.action(formData, this.props.listing.id)
+    
   }
 
   update(field){    
@@ -59,11 +65,11 @@ class ListingForm extends React.Component{
   }
 
   handleFile(e){
-    this.setState({photoFile: e.currentTarget.files[0]})
+    this.setState({ photos: e.target.files })
   }
 
   render(){
-    
+    console.log(this.state)
     return (
       <div>    
       <form onSubmit={this.handleSubmit}>
@@ -199,7 +205,8 @@ class ListingForm extends React.Component{
                 </div>
                 <div className="login-form-right">
                   <div className='listing-type'>
-            <input className="file-search" type="file" onChange={this.handleFile} />
+            <input className="file-search" type="file" onChange={e => this.handleFile(e)} />
+            {/* <input className="file-search" type="file" onChange={e => this.setState({ photos: e.target.files})} /> */}
                   <div className='next-back-position'>
                     <button className='next-button' onClick={this.handleDecrement}>Back</button>
                     <button className='next-button' value={this.props.formType}>{this.props.formType}!</button>

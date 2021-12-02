@@ -30,12 +30,48 @@
   }
 }
 
+.photo-box{
+  width: 1122;
+  margin-top: 27px;
+  display: flex;
+}
+
 .listing-show-img {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   width: 560px;
-  height: 466px;
-  margin-top: 27px;
+  height: 360px;
+}
+
+.listing-second-row {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+
+}
+
+.second-box-items{
+  height: 176px
+}
+.second-box-items-two{
+  height: 176px;
+  margin-top: 8px;
+}
+.listing-third-row {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+
+}
+
+.third-box-items{
+  height: 176px
+}
+.third-box-items-two{
+  height: 176px;
+  margin-top: 8px;
 }
 
 .show-intro {
@@ -146,6 +182,8 @@
 
 .review-item{
 }
+
+
 
 
 

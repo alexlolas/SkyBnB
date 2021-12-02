@@ -54,7 +54,20 @@ class ListingShow extends React.Component {
           
           <h1 className='listing-show-title'>{this.props.listing.title}</h1>
           <div className='listing-show-location'><FaStar className="red-star"size={18} color={'red'} /> {!average ? 5 : average.toFixed(2)} ({this.props.reviews.length} reviews) · {this.props.listing.city}, {this.props.listing.state}, {this.props.listing.zipCode}</div>
-          <img className='listing-show-img' src={this.props.listing.photoUrl} />
+          <div className="photo-box">
+          <img className='listing-show-img' src={this.props.listing.photoUrls[0]} />
+          <div className='listing-second-row'>
+
+          <img className='second-box-items' src={this.props.listing.photoUrls[1]} />
+           <img className='second-box-items-two' src={this.props.listing.photoUrls[2]} />
+          </div>
+          <div className='listing-third-row'>
+
+          <img className='third-box-items' src={this.props.listing.photoUrls[2]} />
+           <img className='third-box-items-two' src={this.props.listing.photoUrls[2]} />
+          </div>
+          </div>
+          <div className='listing-left-box'>
           <div className="show-intro">Entire residential {this.props.listing.houseType} hosted by {this.props.listing.hostName}</div>
         </div>
         <div className="listing-show-houseinfo">
@@ -114,6 +127,7 @@ class ListingShow extends React.Component {
             <ReviewsFormContainer listingId={this.props.listing.id} />
           
       </div>
+        </div>
       </div>
     )
   }
