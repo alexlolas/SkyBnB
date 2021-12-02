@@ -1,0 +1,141 @@
+.form-container{
+  display: flex;
+justify-content: space-between;
+  align-items: center;
+   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+   height: 90vh;
+}
+.login-form-left{
+ display: flex;
+ align-items: center;
+ align-content: center;
+ border-radius: 5px;
+  height: 110vh;
+  width: 50%;
+  background: rgb(71,32,160);
+  margin-left: 0;
+background: linear-gradient(0deg, rgba(71,32,160,1) 0%, rgba(203,34,119,1) 76%);
+// position: absolute;
+align-items: center;
+justify-content: center;
+}
+
+.listing-type input{
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  border: 1px solid lightgray;
+  justify-content: center;  
+  align-items: center;
+  cursor: pointer;
+  min-height: 60px;
+  box-sizing: border-box;
+  width: 464px;
+  font-size: 18px;
+  background: white;
+  margin-bottom: 20px;
+  // margin-left: 50%;
+  margin-top: 20px;
+  // margin-right: 50%;
+
+}
+
+.login-form-right{
+  width: 50%;
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.form-label{
+  color: white;
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 600;
+
+}
+
+
+
+ .form-input-house:hover{
+    border: 2px solid black
+  }
+ .form-input-cottage:hover{
+    border: 2px solid black
+  }
+ .form-input-apartment:hover{
+    border: 2px solid black
+  }
+ .form-input-hotel:hover{
+    border: 2px solid black
+  }
+
+  .next-button{
+    border-radius: 8px;
+    align-content: right;
+    align-items: right;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-top: 25px;
+    background-color: #222222;
+    color: white;
+    border-color: black;
+    height: 48px;
+    width: 84px;
+    font-size: 16px;
+  }
+
+  .next-position{
+    display: flex;
+    justify-content: right;
+    border-top: 1px solid lightgray;
+    margin-top: 50px;
+    width: 100%;
+  }
+  .next-back-position{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid lightgray;
+    margin-top: 50px;
+    width: 100%;
+  }
+
+   #color-change {
+    background-color: rgb(247, 247, 247);
+    border: 2px solid black
+  }
+
+  #input-headers{
+    font-size: 22px;
+    font-weight: 425;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+    margin-bottom: -15px;
+    margin-left: 5px;
+      
+  }
+
+  #file-search{
+    display: flex;
+  border: 0px solid transparent;
+  border-radius: 0px;
+  justify-content: center;  
+  align-items: center;
+  cursor: pointer;
+  min-height: 60px;
+  box-sizing: border-box;
+  width: 464px;
+  font-size: 18px;
+  background: white;
+  margin-bottom: 20px;
+  // margin-left: 50%;
+  margin-top: 20px;
+  margin-left: 10px;
+  // margin-right: 50%;
+
+  }
+

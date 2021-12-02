@@ -1,0 +1,46 @@
+.review-index-box{
+  width: 325px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.review-index-name{
+  font-size: 18px;
+  font-weight: 500;
+  
+}
+
+.review-index-title{
+  margin-top: 12px;
+  font-size: 16;
+}
+
+.review-index-rating{
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.review-index-description{
+  margin-top: 14px;
+  font-size: 14px;
+  
+}
+
+
+.delete-review{
+  width: 51px;
+  background-color: red;
+  border-radius: 6px;
+  color: white;
+  height: 25px;
+  border: 1px solid red;
+  margin-top: 3px;
+  cursor: pointer;
+
+}
+
+.delete-review:hover{
+   background-color: rgb(231, 6, 6);
+}
+

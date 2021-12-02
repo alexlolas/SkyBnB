@@ -1,0 +1,17 @@
+json.extract! listing,  
+            :id,
+            :title, 
+            :price, 
+            :description, 
+            :rooms, 
+            :bathrooms, 
+            :user_id,
+            :city,
+            :state,
+            :zip_code,
+            :address,
+            :num_beds,
+            :capacity,
+            :house_type,
+            :host_name
+      json.photoUrls listing.photos.map {|file| url_for(file)}

@@ -1,0 +1,58 @@
+.rating-radio {
+  display: none;
+}
+
+.form-box{
+  width: 250px;
+  margin-top: 40px
+}
+
+.review-box{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.text-inputs{
+  border-radius: 13px;
+  margin-top: 10px;
+  border: 1px solid lightgray;
+  height: 26px;
+}
+
+.create-post {
+  width: 150px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  height: 30px;
+  border: 1px solid red;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-left: 33%;
+}
+
+.create-post:hover{
+  background-color: rgb(231, 6, 6);
+}
+
+.form-description{
+  resize: none;
+  height: 60px;
+  border-radius: 13px;
+  margin-top: 10px;
+}
+
+.review-inputs-text{
+  margin-top: 10px;
+  font-size: 18px;
+  margin-left: 5px;
+  margin-bottom: -5px;
+}
+
+.review-form-text{
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 450;
+}

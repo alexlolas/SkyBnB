@@ -13,7 +13,8 @@ class LoginForm extends React.Component {
   handleSubmit(e){
     e.preventDefault()
     this.props.loginUser(this.state)
-      .then(this.props.closeModal);    
+      .then(this.props.closeModal)
+      .then(this.forceUpdate);    
   }
 
   handleSubmitDemo(e){
@@ -66,7 +67,7 @@ class LoginForm extends React.Component {
             
         </div>
           <div className='modal-footer'>Log in or
-          <button className='button'>{this.props.otherForm}</button>
+          <button type='button' className='button'>{this.props.otherForm}</button>
           </div>
          
           
