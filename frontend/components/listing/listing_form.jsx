@@ -10,6 +10,8 @@ class ListingForm extends React.Component{
     this.handleClick = this.handleClick.bind(this)
     this.handleFile = this.handleFile.bind(this)
     this.handleDecrement = this.handleDecrement.bind(this)
+    this.photoNames = []
+    
   }
 
   handleSubmit(e){
@@ -65,11 +67,12 @@ class ListingForm extends React.Component{
   }
 
   handleFile(e){
-    this.setState({ photos: e.target.files })
+    this.photoNames.push(e.currentTarget.files)
+      
+     this.setState({ photos: this.state.photos.concat(e.currentTarget.files) })
   }
 
   render(){
-    console.log(this.state)
     return (
       <div>    
       <form onSubmit={this.handleSubmit}>
@@ -205,7 +208,14 @@ class ListingForm extends React.Component{
                 </div>
                 <div className="login-form-right">
                   <div className='listing-type'>
-            <input className="file-search" type="file" onChange={e => this.handleFile(e)} />
+                    <div>{this.photoNames.map((photo, idx) => {
+                      return (
+                        <div key={idx}>
+                          {photo[0].name}
+                        </div>
+                      )
+                    })}</div>
+                  <input className="file-search" type="file" onChange={e => this.handleFile(e)} multiple/>
             {/* <input className="file-search" type="file" onChange={e => this.setState({ photos: e.target.files})} /> */}
                   <div className='next-back-position'>
                     <button className='next-button' onClick={this.handleDecrement}>Back</button>

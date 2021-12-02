@@ -101,10 +101,13 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    date (3.2.2)
     debug_inspector (1.1.0)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.4)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     globalid (0.5.2)
       activesupport (>= 5.0)
     i18n (1.8.11)
@@ -137,6 +140,10 @@ GEM
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    open-uri (0.2.0)
+      stringio
+      time
+      uri
     pg (1.2.3)
     plissken (1.4.1)
     pry (0.14.1)
@@ -208,13 +215,17 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    stringio (3.0.1)
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    time (0.2.0)
+      date
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
+    uri (0.11.0)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -240,9 +251,11 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  figaro
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  open-uri
   pg (>= 0.18, < 2.0)
   plissken
   pry-rails

@@ -27,3 +27,20 @@
   
 }
 
+
+.delete-review{
+  width: 51px;
+  background-color: red;
+  border-radius: 6px;
+  color: white;
+  height: 25px;
+  border: 1px solid red;
+  margin-top: 3px;
+  cursor: pointer;
+
+}
+
+.delete-review:hover{
+   background-color: rgb(231, 6, 6);
+}
+

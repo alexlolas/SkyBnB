@@ -63,8 +63,8 @@ class ListingShow extends React.Component {
           </div>
           <div className='listing-third-row'>
 
-          <img className='third-box-items' src={this.props.listing.photoUrls[2]} />
-           <img className='third-box-items-two' src={this.props.listing.photoUrls[2]} />
+          <img className='third-box-items' src={this.props.listing.photoUrls[3]} />
+           <img className='third-box-items-two' src={this.props.listing.photoUrls[4]} />
           </div>
           </div>
           <div className='listing-left-box'>

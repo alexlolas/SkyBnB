@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch} from "react-router-dom";
-
+import ScrollToTop from "./scroll_to_top";
 
 
 import SignupContainer from './session/signup_container'
@@ -16,6 +16,7 @@ import SplashContainer from "./splash/splash_container";
 import Modal from "./modal/modal";
 const App = () => (
   <div>
+    <ScrollToTop />
     <NavbarContainer />
     <Modal />
       <Switch> 

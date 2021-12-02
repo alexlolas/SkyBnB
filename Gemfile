@@ -19,6 +19,9 @@ gem 'jquery-rails'
 
 gem "aws-sdk-s3"
 
+gem "figaro"
+
+gem 'open-uri'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
