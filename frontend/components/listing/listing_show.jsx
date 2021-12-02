@@ -26,7 +26,6 @@ class ListingShow extends React.Component {
     let leftReview = inverseReview.slice(0, 4)
     let rightReview = inverseReview.slice(4)
 
-    console.log(this.props.currentUser)
     let leftReviewBox = leftReview.map((review, idx) => {
       return (
         <ReviewIndexItem key={idx} deleteReview={this.props.removeReview} currentUser={this.props.currentUser} review={review} />
