@@ -70,3 +70,4 @@ yarn-debug.log*
 **/bundle*
 
 bundle.js*
+/config/application.yml
