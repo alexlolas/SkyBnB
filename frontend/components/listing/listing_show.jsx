@@ -9,6 +9,8 @@ import { FaStar } from 'react-icons/fa'
 class ListingShow extends React.Component {
   constructor(props){
     super(props)
+    this.state = this.props.listing
+
     
   }
 
@@ -23,17 +25,17 @@ class ListingShow extends React.Component {
     }
     let leftReview = inverseReview.slice(0, 4)
     let rightReview = inverseReview.slice(4)
-    console.log(inverseReview)
-    console.log(rightReview)
+
+    
     let leftReviewBox = leftReview.map((review, idx) => {
       return (
-        <ReviewIndexItem key={idx} review={review} />
+        <ReviewIndexItem key={idx} deleteReview={this.props.removeReview} currentUser={this.props.currentUser} review={review} />
 
       )
     })
     let rightReviewBox = rightReview.map((review, idx) => {
       return (
-        <ReviewIndexItem key={idx} review={review} />
+        <ReviewIndexItem key={idx} deleteReview={this.props.removeReview} currentUser={this.props.currentUser} review={review} />
 
       )
     })
@@ -51,7 +53,7 @@ class ListingShow extends React.Component {
           <Link className='listings-index' to='/listings'> <i className="fas fa-angle-left"></i>All listings</Link>
           
           <h1 className='listing-show-title'>{this.props.listing.title}</h1>
-          <div className='listing-show-location'><FaStar className="red-star"size={18} color={'red'} /> {average.toFixed(2)} ({this.props.reviews.length} reviews) · {this.props.listing.city}, {this.props.listing.state}, {this.props.listing.zipCode}</div>
+          <div className='listing-show-location'><FaStar className="red-star"size={18} color={'red'} /> {!average ? 5 : average.toFixed(2)} ({this.props.reviews.length} reviews) · {this.props.listing.city}, {this.props.listing.state}, {this.props.listing.zipCode}</div>
           <img className='listing-show-img' src={this.props.listing.photoUrl} />
           <div className="show-intro">Entire residential {this.props.listing.houseType} hosted by {this.props.listing.hostName}</div>
         </div>

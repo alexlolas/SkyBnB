@@ -14,9 +14,11 @@ const ReviewIndexItem = props => {
   return (
     <div className="review-index-box">
       <div className="review-index-name"> {props.review.name}</div>
-      <div className="review-index-title">{props.review.review_title}</div>
       <div className="review-index-description">{props.review.body}</div>
       <div className="review-index-rating">{stars}</div>
+      {props.currentUser === props.review.guest_id ? (
+        <button onClick={() => props.deleteReview(props.review.id).then(() => {window.location.reload()})}>Delete Comment</button>
+      ): null}
       <br />
       <br />
       <br />

@@ -6,17 +6,18 @@ import {openModal} from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => ({
     review: {
-    reviewTitle: '',
     rating: '',
     body: '',
     name: '',
       listingId: parseInt(ownProps.listingId),
     guestId: state.session.id
-  }
+  },
+  currentUser: state.session.id
 })
 
 const mDTP = dispatch => ({
-  createReview: review => dispatch(createReview(review))
+  createReview: review => dispatch(createReview(review)),
+  openModal: (e) => dispatch(openModal(e))
 })
 
 export default connect(mSTP, mDTP)(ReviewForm)

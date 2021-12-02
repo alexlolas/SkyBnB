@@ -12,7 +12,22 @@ class ReviewForm extends React.Component{
   handleSubmit(e){
     e.preventDefault()
 
-    this.props.createReview(this.state)
+    if (this.props.currentUser){
+
+      this.props.createReview(this.state)
+      this.setState({
+        body: '',
+        guestId: this.props.currentUser,
+        listingId: this.props.listingId,
+        name: '',
+        rating: ''
+        
+      })
+      // this.setState({})
+    } else {
+      this.props.openModal('login')
+    }
+    this.forceUpdate()
   }
 
   update(field){
@@ -20,7 +35,7 @@ class ReviewForm extends React.Component{
   }
 
   render(){
-
+    console.log(this.state)
     return (
       <form className='form-box' onSubmit={this.handleSubmit}>
         <div className="review-form-text">Write a review!</div>
@@ -45,9 +60,7 @@ class ReviewForm extends React.Component{
          <FaStar key='5' size={27} color={this.state.rating >= 5 ? 'red' : 'gray'}/>
         </label>
         <div className="review-box">
-          <div className='review-inputs-text'> Title </div>
-        
-        <input className="text-inputs"type="text" value={this.state.reviewTitle} onChange={this.update('reviewTitle')}  />
+          
           <div className='review-inputs-text'> Name </div>
             <input className="text-inputs" type="text" value={this.state.name} onChange={this.update('name')}  />
           <div className='review-inputs-text'> Description </div>
