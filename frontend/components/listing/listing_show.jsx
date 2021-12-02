@@ -26,7 +26,7 @@ class ListingShow extends React.Component {
     let leftReview = inverseReview.slice(0, 4)
     let rightReview = inverseReview.slice(4)
 
-    
+    console.log(this.props.currentUser)
     let leftReviewBox = leftReview.map((review, idx) => {
       return (
         <ReviewIndexItem key={idx} deleteReview={this.props.removeReview} currentUser={this.props.currentUser} review={review} />
@@ -124,8 +124,11 @@ class ListingShow extends React.Component {
             </div>
           </div>
             
-            <ReviewsFormContainer listingId={this.props.listing.id} />
-          
+            <ReviewsFormContainer listingId={this.props.listing.id} currentUser={this.props.currentUser} />
+            {this.props.listing.userId === this.props.currentUser ? (
+
+              <button onClick={() => this.props.removeListing(this.props.listing.id).then((res) => {this.props.history.push(`/listings`)})}>Delete Listing</button>
+            ) : null}
       </div>
         </div>
       </div>

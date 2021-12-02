@@ -134,33 +134,74 @@ listing4.photos.attach(io: file3, filename: 'file3.jpg')
 listing4.photos.attach(io: file4, filename: 'file4.jpg')
 listing4.photos.attach(io: file5, filename: 'file5.jpg')
 
-# listing5 = Listing.create!(title: "Small house in decent condition",
-#           description: "Have a great time at this small house in San Francisco! We are not
-#           too worried about the conditions of the house, so feel free to have parties or do
-#           whatever you feel like! You will only have to pay the cleaning fee, and please do not
-#           damage anything.",
-#           state: "CA",
-#           city: "San Francisco",
-#           zip_code: 94322,
-#           address: "234 palm st",
-#           price: 199,
-#           user_id: 1,
-#           rooms: 3,
-#           num_beds: 4,
-#           bathrooms: 3,
-#           capacity: 8,
-#           house_type: "House",
-#           host_name: "Alex Smith")
+listing5 = Listing.create!(title: "Small house in decent condition",
+          description: "Have a great time at this small house in San Francisco! We are not
+          too worried about the conditions of the house, so feel free to have parties or do
+          whatever you feel like! You will only have to pay the cleaning fee, and please do not
+          damage anything.",
+          state: "CA",
+          city: "San Francisco",
+          zip_code: 94322,
+          address: "234 palm st",
+          price: 199,
+          user_id: 1,
+          rooms: 3,
+          num_beds: 4,
+          bathrooms: 3,
+          capacity: 8,
+          house_type: "House",
+          host_name: "Alex Smith")
 
 
-# file1 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house5.jpg')
-# file2 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house4bedroom.jpg')
-# file3 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house4bedroom1.jpg')
-# file4 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house4interior.jpg')
-# file5 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house4kitchen.jpg')
+file1 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house5.jpg')
+file2 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house5bedroom.jpg')
+file3 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house5bedroom2.jpg')
+file4 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house5interior-1.jpg')
+file5 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house5kitchen.jpg')
 
-# listing4.photos.attach(io: file1, filename: 'file1.jpg')
-# listing4.photos.attach(io: file2, filename: 'file2.jpg')
-# listing4.photos.attach(io: file3, filename: 'file3.jpg')
-# listing4.photos.attach(io: file4, filename: 'file4.jpg')
-# listing4.photos.attach(io: file5, filename: 'file5.jpg')
+listing5.photos.attach(io: file1, filename: 'file1.jpg')
+listing5.photos.attach(io: file2, filename: 'file2.jpg')
+listing5.photos.attach(io: file3, filename: 'file3.jpg')
+listing5.photos.attach(io: file4, filename: 'file4.jpg')
+listing5.photos.attach(io: file5, filename: 'file5.jpg')
+ 
+listing6 = Listing.create!(title: "Great home in a nice area!",
+          description: "We are located in a small neighborhood right near the beach where you
+          can hang out all day and even surf! There are small shops along the way, and you can 
+          have a nice dinner with a great view of the Ocean.",
+          state: "CA",
+          city: "San Francisco",
+          zip_code: 98732,
+          address: "8754 Ocean st",
+          price: 400,
+          user_id: 2,
+          rooms: 3,
+          num_beds: 3,
+          bathrooms: 2,
+          capacity: 6,
+          house_type: "House",
+          host_name: "Ralfie")
+
+
+file1 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/download-5.jpg')
+file2 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house6bedroom1.jpg')
+file3 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house6bedroom2.jpg')
+file4 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house6interior.jpg')
+file5 = URI.open('https://skybnb-seeds.s3.us-west-1.amazonaws.com/house6kitchen-2.jpg')
+
+listing6.photos.attach(io: file1, filename: 'file1.jpg')
+listing6.photos.attach(io: file2, filename: 'file2.jpg')
+listing6.photos.attach(io: file3, filename: 'file3.jpg')
+listing6.photos.attach(io: file4, filename: 'file4.jpg')
+listing6.photos.attach(io: file5, filename: 'file5.jpg')
+
+
+Review.create!(rating: 5, body: 'This place was great! It was super modern and the house was very clean', name: 'Jimmy', listing_id: 1, guest_id: 1)
+Review.create!(rating: 4, body: 'This place was really cool, I would for sure go back the surrounding area was very nice.', name: 'Jimmy', listing_id: 2, guest_id: 1)
+Review.create!(rating: 2, body: 'The house was cool but a lot of the features like air conditioning was broken', listing_id: 5, name: 'Jimmy', guest_id: 1)
+Review.create!(rating: 2, body: 'while the house was clean, it was super boring and there was not much to do', listing_id: 1, name: 'Alex', guest_id: 2)
+Review.create!(rating: 5, body: 'This place was really cool, I would for sure go back the surrounding area was very nice.',  name: 'Alex', listing_id: 2, guest_id: 2)
+Review.create!(rating: 2, body: 'The house was cool but a lot of the features like air conditioning was broken',  name: 'Alex', listing_id: 5, guest_id: 2)
+Review.create!(rating: 5, body: 'This place was great! It was super modern and the house was very clean', name: 'Michelle', listing_id: 3, guest_id: 3)
+Review.create!(rating: 4, body: 'This place was really cool, I would for sure go back the surrounding area was very nice.', name: 'Michelle', listing_id: 4, guest_id: 3)
+Review.create!(rating: 2, body: 'The house was cool but a lot of the features like air conditioning was broken', name: 'Michelle', listing_id: 6, guest_id: 3)

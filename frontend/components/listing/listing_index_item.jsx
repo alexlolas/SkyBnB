@@ -23,10 +23,6 @@ class ListingIndexItem extends React.Component {
         <div className='anemeties'>Wifi · Air conditioning · Free parking</div>
           <div className='listing-cost'>${listing.price}&nbsp;
             <div className='price-text'>/&nbsp;night</div></div>
-        {listing.userId === this.props.session ? (
-
-          <button onClick={() => this.props.removeListing(listing.id)}>Delete Listing</button>
-        ) : null}
         </Link>
       </div>
     )

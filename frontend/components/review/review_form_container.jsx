@@ -4,16 +4,19 @@ import ReviewForm from "./review_form";
 import { createReview } from "../../actions/review_actions";
 import {openModal} from '../../actions/modal_actions'
 
-const mSTP = (state, ownProps) => ({
+const mSTP = (state, ownProps) => {
+  return {
     review: {
     rating: '',
     body: '',
     name: '',
       listingId: parseInt(ownProps.listingId),
-    guestId: state.session.id
+      guestId: ownProps.currentUser
   },
   currentUser: state.session.id
-})
+
+  }
+}
 
 const mDTP = dispatch => ({
   createReview: review => dispatch(createReview(review)),

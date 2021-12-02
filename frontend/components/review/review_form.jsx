@@ -17,7 +17,7 @@ class ReviewForm extends React.Component{
       this.props.createReview(this.state)
       this.setState({
         body: '',
-        guestId: this.props.currentUser,
+        guestId: this.props.guestId,
         listingId: this.props.listingId,
         name: '',
         rating: ''
@@ -35,7 +35,6 @@ class ReviewForm extends React.Component{
   }
 
   render(){
-    console.log(this.state)
     return (
       <form className='form-box' onSubmit={this.handleSubmit}>
         <div className="review-form-text">Write a review!</div>

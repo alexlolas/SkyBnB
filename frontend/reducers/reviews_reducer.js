@@ -17,7 +17,12 @@ const reviewReducer = (state = {}, action) => {
       delete nextState[action.reviewId]
       return nextState
     case RECEIVE_LISTING:
-      return action.listing.reviews
+      if (action.listing.reviews){
+
+        return action.listing.reviews
+      } else {
+        return {}
+      }
     default:
       return state;
   }
