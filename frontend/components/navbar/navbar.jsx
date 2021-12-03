@@ -9,7 +9,6 @@ class Navbar extends React.Component{
     this.state = { show: false }
     this.handleClick = this.handleClick.bind(this)
     this.dropdownRef = React.createRef()
-   
   }
 
   componentDidMount(){

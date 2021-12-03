@@ -1,11 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Footer from "../footer/footer";
 
 class Splash extends React.Component{
   render(){
     return (
       <div>
-        <img className="background-image" src="https://picturelistings.s3.us-west-1.amazonaws.com/nature-gcdd909c34_1920.jpg" />
-        <h1>Not sure where to go?</h1>
+
+        <div className="true-background">
+  
+        <div className="background-home">
+          <div className="splash-box">
+            <div className="text-box">
+
+          <h1 className="splash-text">Not sure where to go? Pefect.</h1>
+            </div>
+          <Link to="/listings">
+          <button className="splash-button">Im Flexible</button>
+          </Link>
+
+          </div>
+  
+        </div>
+        </div>
+         <Footer />
       </div>
     )
   }
