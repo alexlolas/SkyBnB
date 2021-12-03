@@ -10,16 +10,19 @@ class Splash extends React.Component{
         <div className="true-background">
   
         <div className="background-home">
-          <div className="splash-box">
             <div className="text-box">
+          <div className="splash-box">
 
           <h1 className="splash-text">Not sure where to go? Pefect.</h1>
             </div>
-          <Link to="/listings">
-          <button className="splash-button">Im Flexible</button>
-          </Link>
+          <div className='button-box'>
 
+          <Link to="/listings">
+                <button className="splash-button"> <div className="button-text">Im Flexible</div></button>
+          </Link>
           </div>
+          </div>
+
   
         </div>
         </div>

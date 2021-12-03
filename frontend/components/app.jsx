@@ -14,18 +14,20 @@ import ListingShowContainer from './listing/listing_show_container'
 import NavbarContainer from './navbar/navbar_container'
 import SplashContainer from "./splash/splash_container";
 import Modal from "./modal/modal";
+import { AuthRoute, ProtectedRoute } from "../util/route_utils";
 const App = () => (
   <div>
     <ScrollToTop />
     <NavbarContainer />
     <Modal />
       <Switch> 
+
         <Route exact path='/' component={SplashContainer} />
         <Route exact path='/listings' component={ListingIndexContainer}/>
-        <Route exact path='/listings/create' component={ListingFormContainer} />
+        <ProtectedRoute exact path='/listings/create' component={ListingFormContainer} />
         <Route exact path='/listings/:listingId' component={ListingShowContainer}/>
-        <Route exact path='/listings/:listingId/edit' component={EditListingContainer}/>
-        <Route exact path='/reviews/:create' component={ReviewFormContainer}/>
+        <ProtectedRoute exact path='/listings/:listingId/edit' component={EditListingContainer}/>
+        <ProtectedRoute exact path='/reviews/:create' component={ReviewFormContainer}/>
 
 
       </Switch>

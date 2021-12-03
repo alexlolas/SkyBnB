@@ -5,13 +5,14 @@ import { createReview } from "../../actions/review_actions";
 import {openModal} from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
+  console.log(ownProps)
   return {
     review: {
     rating: '',
     body: '',
     name: '',
       listingId: parseInt(ownProps.listingId),
-      guestId: ownProps.currentUser
+      guestId: state.session.id
   },
   currentUser: state.session.id
 

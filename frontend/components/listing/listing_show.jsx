@@ -9,7 +9,7 @@ import { FaStar } from 'react-icons/fa'
 class ListingShow extends React.Component {
   constructor(props){
     super(props)
-    this.state = this.props.listing
+    
 
     
   }
@@ -126,7 +126,7 @@ class ListingShow extends React.Component {
             <ReviewsFormContainer listingId={this.props.listing.id} currentUser={this.props.currentUser} />
             {this.props.listing.userId === this.props.currentUser ? (
 
-              <button onClick={() => this.props.removeListing(this.props.listing.id).then((res) => {this.props.history.push(`/listings`)})}>Delete Listing</button>
+              <button className="delete-listing-button" onClick={() => this.props.removeListing(this.props.listing.id).then((res) => {this.props.history.push(`/listings`)})}>Delete Listing</button>
             ) : null}
       </div>
         </div>

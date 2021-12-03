@@ -1,7 +1,14 @@
 // Place all the styles related to the listings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.index-container {
+  width: 100%;
+}
+.listing-left-container{
+  width: 50%;
+  height: 100vh;
+  overflow: scroll;
+}
 .listing-box {
  border-top: 1px solid lightgray;
    margin-left: 24px;
@@ -120,7 +127,9 @@
   .index-container{
     border-top: 1px solid lightgray;
     position: relative;
-    overflow: scroll;
+    // overflow: scroll;
+    display: flex;
+    width: 100%;
   }
   
   // .listing-left-conainer{
@@ -138,3 +147,12 @@
 //   flex-direction: column;
 //   padding: 5px;
 // }
+.index-box-right{
+  width: 50%;
+}
+#map-container {
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+}
+

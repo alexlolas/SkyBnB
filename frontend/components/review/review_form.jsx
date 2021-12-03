@@ -17,7 +17,7 @@ class ReviewForm extends React.Component{
       this.props.createReview(this.state)
       this.setState({
         body: '',
-        guestId: this.props.guestId,
+        guestId: this.props.currentUser,
         listingId: this.props.listingId,
         name: '',
         rating: ''

@@ -1,6 +1,7 @@
 import React from "react";
 import ListingIndexItem from "./listing_index_item";
 import { Suitcase } from "../svg/svg";
+import ListingMap from "./listing_map"
 
 class ListingIndex extends React.Component {
   constructor(props){
@@ -32,6 +33,10 @@ class ListingIndex extends React.Component {
                <ListingIndexItem  key={idx} session={this.props.session} listing={listing} removeListing={this.props.removeListing}/>
             ))}
         </ul>
+        </div>
+        <div className='index-box-right'>
+
+        <ListingMap listings={this.props.listings} />
         </div>
       </div>
       )
