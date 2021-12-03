@@ -67,7 +67,6 @@ class ListingForm extends React.Component{
   }
 
   handleFile(e){
-    this.photoNames.push(e.currentTarget.files)
       
      this.setState({ photos: e.currentTarget.files })
   }
@@ -207,23 +206,26 @@ class ListingForm extends React.Component{
                   <label className="form-label"> Upload a photo of the place!</label>
                 </div>
                 <div className="login-form-right">
-                  <div className='listing-type'>
-                    <div>{this.photoNames.map((photo, idx) => {
+                  {/* <div className='listing-type'> */}
+                    {/* <div>{this.photoNames.map((photo, idx) => {
                       return (
                         <div key={idx}>
                           {photo[0].name}
                         </div>
                       )
-                    })}</div>
-                  <input className="file-search" type="file" onChange={e => this.handleFile(e)} multiple/>
+                    })}</div> */}
+                <div className="file-search">
+                    <div className="filename-text">Add all five photos at once by shift clicking or dragging them!</div>
+                  <input  type="file" onChange={e => this.handleFile(e)} multiple/>
             {/* <input className="file-search" type="file" onChange={e => this.setState({ photos: e.target.files})} /> */}
                   <div className='next-back-position'>
                     <button className='next-button' onClick={this.handleDecrement}>Back</button>
                     <button className='next-button' value={this.props.formType}>{this.props.formType}!</button>
                   </div>
+                    </div>
             </div>
           </div>
-          </div>
+          // </div>
         ): null}
       </form>
  
