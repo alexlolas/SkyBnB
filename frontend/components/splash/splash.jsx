@@ -13,7 +13,7 @@ class Splash extends React.Component{
             <div className="text-box">
           <div className="splash-box">
 
-          <h1 className="splash-text">Not sure where to go? Pefect.</h1>
+          <h1 className="splash-text">Not sure where to go? Perfect.</h1>
             </div>
           <div className='button-box'>
 
