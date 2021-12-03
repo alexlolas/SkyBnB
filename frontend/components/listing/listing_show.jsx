@@ -130,6 +130,14 @@ class ListingShow extends React.Component {
           </div>
             
             <ReviewsFormContainer listingId={this.props.listing.id} currentUser={this.props.currentUser} />
+            <div>
+
+            {this.props.listing.userId === this.props.currentUser ? (
+                <Link to={`${this.props.listing.id}/edit`}>
+              <button className="edit-listing-button" >Edit Listing</button>
+                </Link>
+            ) : null}
+            </div>
             {this.props.listing.userId === this.props.currentUser ? (
 
               <button className="delete-listing-button" onClick={() => this.props.removeListing(this.props.listing.id).then((res) => {this.props.history.push(`/listings`)})}>Delete Listing</button>

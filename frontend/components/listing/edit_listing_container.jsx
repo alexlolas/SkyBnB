@@ -10,24 +10,24 @@ class EditListingForm extends React.Component{
   }
 
   render(){
-    const {action, formType, listing} = this.props
+    const {action, formType, listing, history} = this.props
     
     if (!listing) return null;
     
 
     return (
-      <ListingForm action={action} formType={formType} listing={listing} />
+      <ListingForm history={history} action={action} formType={formType} listing={listing} />
     )
   }
 }
 
 
 const mSTP = (state, ownProps) => {
-
   return {
   
     listing: state.entities.listings[ownProps.match.params.listingId],
-    formType: 'Update Listing'
+    formType: 'Update Listing',
+    history: ownProps.history
   }
     
 }

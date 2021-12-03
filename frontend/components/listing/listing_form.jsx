@@ -1,5 +1,4 @@
 import React from "react";
-
 class ListingForm extends React.Component{
   constructor(props){
     super(props)
@@ -39,8 +38,12 @@ class ListingForm extends React.Component{
         formData.append('listing[photos][]', this.state.photos[i])
       }
     }
-
-    this.props.action(formData, this.props.listing.id)
+    if (this.props.formType === 'Create Listing'){
+      this.props.action(formData, this.props.listing.id)
+        .then(res => {this.props.history.push(`/listings/${res.listing.id}`)})
+    } else{
+      this.props.action(formData, this.props.listing.id)
+    }
     
   }
 
@@ -72,6 +75,7 @@ class ListingForm extends React.Component{
   }
 
   render(){
+    console.log(this.props)
     return (
       <div>    
       <form onSubmit={this.handleSubmit}>

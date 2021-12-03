@@ -193,7 +193,7 @@
 .review-item{
 }
 
-.delete-listing-button{
+.edit-listing-button{
    width: 150px;
   background-color: red;
   color: white;
@@ -206,7 +206,23 @@
 
 
 }
+.delete-listing-button{
+   width: 150px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  height: 30px;
+  border: 1px solid red;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 132px;
 
+
+}
+
+.edit-listing-button:hover{
+background-color: rgb(231, 6, 6);
+}
 .delete-listing-button:hover{
 background-color: rgb(231, 6, 6);
 }

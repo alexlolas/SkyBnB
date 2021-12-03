@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchListing, removeListing } from "../../actions/listing_actions";
+import { fetchListing, removeListing, updateListing} from "../../actions/listing_actions";
 import { connect } from "react-redux";
 import ListingShow from "./listing_show";
 import { deleteReview } from "../../actions/review_actions";
@@ -18,7 +18,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
   fetchListing: listing => dispatch(fetchListing(listing)),
   removeListing: listing => dispatch(removeListing(listing)),
-  removeReview: reviewId => dispatch(deleteReview(reviewId))
+  removeReview: reviewId => dispatch(deleteReview(reviewId)),
+  updateListing: listing => dispatch(updateListing(listing))
 })
 
 export default connect(mSTP, mDTP)(ListingShow)
