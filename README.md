@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Introduction
 
-Things you may want to cover:
+Skybnb is an Airbnb clone where you can look up listings for houses, apartments, and hotels to stay at. Users will be able
+to create their own listings, book a stay at a place they like, and leave reviews on places they've been too!
 
-* Ruby version
+#Live Site
 
-* System dependencies
+* 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
