@@ -73,5 +73,12 @@ As you can see here there are ternarys set on the render form that designates a 
            </div>   
          </div>
          ) : null
-          ```
+```
+
+Future Features
+
+I plan to keep adding to this website. I will be adding a reservation method so you can actually
+book your stay at places. I will also be further implementing the map to make it dynamic to the city
+you are looking at, while also adding numerous more cities. Lastly, I will be adding a dynamic search function
+to my website, so you can look up places by city and corresponding results show up. 
 
