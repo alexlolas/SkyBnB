@@ -26,8 +26,9 @@ class ReviewForm extends React.Component{
       // this.setState({})
     } else {
       this.props.openModal('login')
+     
+
     }
-    this.forceUpdate()
   }
 
   update(field){

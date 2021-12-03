@@ -21,7 +21,6 @@ const App = () => (
     <NavbarContainer />
     <Modal />
       <Switch> 
-
         <Route exact path='/' component={SplashContainer} />
         <Route exact path='/listings' component={ListingIndexContainer}/>
         <ProtectedRoute exact path='/listings/create' component={ListingFormContainer} />

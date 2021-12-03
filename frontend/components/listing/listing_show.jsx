@@ -47,6 +47,8 @@ class ListingShow extends React.Component {
   
     // if (!this.props.users) return null
     return (
+      <div className="index-show-box">
+
       <div className="index-show-container">
         <div className='listing-show-header'>
           <Link className='listings-index' to='/listings'> <i className="fas fa-angle-left"></i>All listings</Link>
@@ -66,6 +68,10 @@ class ListingShow extends React.Component {
            <img className='third-box-items-two' src={this.props.listing.photoUrls[4]} />
           </div>
           </div>
+          <div className="body-box">
+
+          <div className='body-left-box'>
+
           <div className='listing-left-box'>
           <div className="show-intro">Entire residential {this.props.listing.houseType} hosted by {this.props.listing.hostName}</div>
         </div>
@@ -129,7 +135,48 @@ class ListingShow extends React.Component {
               <button className="delete-listing-button" onClick={() => this.props.removeListing(this.props.listing.id).then((res) => {this.props.history.push(`/listings`)})}>Delete Listing</button>
             ) : null}
       </div>
+          </div>
+              <div className="reservations-box">
+
+          <div className="top-level-box">
+            <div className="top-level-left-box">
+
+              ${this.props.listing.price} / night
+            </div>
+            <div className="top-level-right-box">
+
+                  <FaStar className="red-star" size={14} color={'red'} /> {!average ? 5 : average.toFixed(2)} ({this.props.reviews.length} reviews)
+            </div>
+          </div>
+          <div className="main-reservation-box">
+            <div className="main-box-upperleft">
+              <div className="upper-level-text">Check-In</div>
+              <div className="lower-level-text">Add Date</div>
+            </div>
+            <div className="main-box-upperright">
+                    <div className="upper-level-text">Checkout</div>
+                    <div className="lower-level-text">Add Date</div>
+            </div>
+
+          </div>
+          <div className="main-box-lower">
+                  <div className="main-box-lowerleft">
+              <div className="upper-level-text">Guests</div>
+                <div className="lower-level-text">1 Guest</div>
+                  </div>
+                  <div className="main-box-lowerright">
+
+                  <i className="fas fa-chevron-down"></i>
+                  </div>
+          </div>
+          <div className='last-reservation-box'>
+            <button className="reservation-submit" >Check Availability</button>
+          </div>
+              </div>
+          </div>
         </div>
+      </div>
+      
       </div>
     )
   }
