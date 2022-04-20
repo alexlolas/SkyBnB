@@ -14,7 +14,7 @@ import ListingShowContainer from './listing/listing_show_container'
 import NavbarContainer from './navbar/navbar_container'
 import SplashContainer from "./splash/splash_container";
 import Modal from "./modal/modal";
-import { AuthRoute, ProtectedRoute } from "../util/route_utils";
+import { AuthRoute, ProtectedRoute } from "../util/route_utils.jsx";
 const App = () => (
   <div>
     <ScrollToTop />
