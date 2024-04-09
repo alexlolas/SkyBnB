@@ -24,7 +24,7 @@ class ListingForm extends React.Component{
     formData.append('listing[zip_code]', this.state.zipCode);
     formData.append('listing[address]', this.state.address);
     formData.append('listing[price]', this.state.price);
-    formData.append('listing[user_id]', this.state.userId);
+    formData.append('listing[user_id]', this.state.userId);``
     formData.append('listing[rooms]', this.state.rooms);
     formData.append('listing[bathrooms]', this.state.bathrooms);
     formData.append('listing[num_beds]', this.state.numBeds);
